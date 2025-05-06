@@ -116,20 +116,22 @@ useEffect(() => {
 
     const users = useSelector((state) => state.users.data);
 
-  const filteredData = useMemo(() => {
-    return itps.filter((item) => {
-      const matchesSearch =
-        item.activity.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.Inspector?.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.additionalNotes.toLowerCase().includes(searchQuery.toLowerCase());
-      // const matchesStatus =
-        item.status === selectedStatus;
-      const matchesAssignee =
-        selectedAssignee === "All Assignees" ||
-        item.Inspector === selectedAssignee;
-      return matchesSearch && matchesAssignee;
-    });
-  }, [itps, searchQuery, selectedAssignee]);
+    const filteredData = useMemo(() => {
+      return itps.filter((item) => {
+        const matchesSearch =
+          item.activity.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.Inspector?.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.additionalNotes.toLowerCase().includes(searchQuery.toLowerCase());
+        // const matchesStatus =
+          item.status === selectedStatus;
+        const matchesAssignee =
+          selectedAssignee === "All Assignees" ||
+          item.Inspector === selectedAssignee;
+        return matchesSearch && matchesAssignee;
+      });
+    }, [itps, searchQuery, selectedAssignee]);
+    
+    
 
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
