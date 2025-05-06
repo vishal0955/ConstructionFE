@@ -124,12 +124,12 @@ function RFIs() {
       {/* Dashboard Section */}
       <div className="container py-4">
         <h2 className="mb-4">RFI </h2>
-
-        <div className="row g-3 mb-4">
+     {/* Summary Cards */}
+     <div className="row g-3 mb-4">
           {stats.map((stat, index) => (
             <div className="col-md-3" key={index}>
               <div
-                className={`stats-card p-4 shadow-lg border-start border-4 border-${stat.color} rounded-3 bg-white h-100 transition-all hover:shadow-xl`}
+                className={`stats-card p-4 shadow-lg border-start border-4 border-${stat.color} rounded-3 bg-white h-100`}
               >
                 <div className="d-flex align-items-start gap-3">
                   <div
@@ -150,6 +150,7 @@ function RFIs() {
             </div>
           ))}
         </div>
+
         {/* Top Stats Cards */}
         <div className="d-flex justify-content-between align-items-center mt-4">
           <h4 className="fw-semibold">RFI</h4>
@@ -309,7 +310,8 @@ function RFIs() {
         </div>
 
         {/* Charts Section */}
-        <div className="row mb-4 g-4">
+           {/* Charts Section */}
+           <div className="row mb-4 g-4">
           <div className="col-md-8">
             <div className="card p-3 shadow-sm">
               <h5 className="mb-4">RFI Trends</h5>

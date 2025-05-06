@@ -33,7 +33,7 @@ import ViewServicePage from "./components/AdminComponents/PlantMachinery/ViewSer
 import Messenger from "./components/AdminComponents/messenger/Messenger";
 import Announcements from "./components/AdminComponents/announcements/Announcements";
 import AddAnnouncements from "./components/AdminComponents/announcements/AddAnnouncements";
-import AddRFIs from "./components/AdminComponents/RFIs/AddRFIs";
+
 import ToolboxTalks from "./components/AdminComponents/ToolboxTalks/ToolboxTalks";
 import AddToolboxTalks from "./components/AdminComponents/ToolboxTalks/AddToolboxTalks";
 import Calendar from "./components/AdminComponents/Calendar/Calendar";
@@ -83,7 +83,7 @@ import SafetyEquipmentList from "./components/AdminComponents/SafetyEquipment/Sa
 import SafetyEquipmentDetails from "./components/AdminComponents/SafetyEquipment/SafetyEquipmentDetails";
 import EditToolboxTalk from "./components/AdminComponents/ToolboxTalks/EditToolboxTalk";
 import AuditReports from "./components/AdminComponents/AuditEquipment/AuditReports";
-import RFIs from "./components/AdminComponents/RFIs/RFIs";
+
 import EditUser from "./components/AdminComponents/UserManagement/EditUser";
 import ViewUser from "./components/AdminComponents/UserManagement/ViewUser";
 import AuditEquipmentView from "./components/AdminComponents/AuditEquipment/AuditEquipmentView";
@@ -93,6 +93,9 @@ import ProtectedRoute from "./routes/ProtectedRoutes";
 import SuperAdminDashboard from "./components/SuperAdmin/SuperAdminDashboard";
 import DefectDetails from "./components/AdminComponents/DefectList/DefectDetails";
 import ViewITPDetails from "./components/AdminComponents/ITPs/ViewITPDetails";
+import SWMSStepper from "./components/AdminComponents/SWMS/SWMSStepForm.jsx/SWMSStepper";
+import RFIs from "./components/AdminComponents/RFIs/RFIs";
+import AddRFIs from "./components/AdminComponents/RFIs/AddRFIs";
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
@@ -121,6 +124,8 @@ function App() {
             <Route path="/dashboard" element={
           <Dashboard />
        } />
+     <Route path="/SWMSStepper" element={<SWMSStepper />} />
+
             <Route
               path="/safety-compliance-dashboard"
               element={<SafetyComplianceDashboard />}

@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createRFI } from "../../../redux/slices/rfiSlice";
 import { fetchUsers } from "../../../redux/slices/userSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
+import { Modal, Button } from "react-bootstrap";
+import { Stage, Layer, Circle } from "react-konva";
 
 function AddRFIs() {
-
-  const { data:users } = useSelector((state) => state.users);
-  console.log(users)
+  const { data: users } = useSelector((state) => state.users);
   const dispatch = useDispatch();
 
-  
   const [formData, setFormData] = useState({
     subject: "",
     priority: "",
@@ -23,7 +20,19 @@ function AddRFIs() {
     department: "",
     description: "",
     image: [],
+    drawingMarkup: null, // Stores the drawing markup data
   });
+
+  const [responses, setResponses] = useState([]); // Stores threaded responses
+  const [newResponse, setNewResponse] = useState(""); // New response text
+  const [showDrawingModal, setShowDrawingModal] = useState(false);
+  const [drawingShapes, setDrawingShapes] = useState([]); // Stores shapes drawn on the canvas
+  const [isDrawing, setIsDrawing] = useState(false);
+  const [selectedColor, setSelectedColor] = useState("#ff0000"); // Default color
+  const [aiResponse, setAiResponse] = useState(""); // Stores the AI-generated response
+  const [loadingAI, setLoadingAI] = useState(false); // Loading state for AI response
+  const [showAIResponseModal, setShowAIResponseModal] = useState(false); // Modal for AI response
+  const stageRef = useRef(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +44,8 @@ function AddRFIs() {
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
+
   const handleFileUpload = (e) => {
     const files = Array.from(e.target.files);
     setFormData((prev) => ({
@@ -46,7 +56,7 @@ function AddRFIs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+
     const submitData = new FormData();
     submitData.append("subject", formData.subject);
     submitData.append("priority", formData.priority);
@@ -54,58 +64,94 @@ function AddRFIs() {
     submitData.append("assignee", formData.assignee);
     submitData.append("department", formData.department);
     submitData.append("description", formData.description);
+    submitData.append("drawingMarkup", JSON.stringify(formData.drawingMarkup)); // Include drawing markup
 
     formData.image.forEach((file) => {
       submitData.append("image", file);
     });
-    // Dispatch the thunk with your formData object
-    dispatch(createRFI( submitData )).unwrap().then(() => {
-      toast.success("RFI created successfully!");
-    }).catch(() => {
-      toast.error("Failed to create RFI");
-    });
+
+    dispatch(createRFI(submitData))
+      .unwrap()
+      .then(() => {
+        toast.success("RFI created successfully!");
+        setAiResponse(""); // Clear AI response after submission
+      })
+      .catch(() => {
+        toast.error("Failed to create RFI");
+      });
   };
 
-
-  const handleAutofill = async () => {
+  const handleGenerateAIResponse = async () => {
+    setLoadingAI(true);
     try {
-      const response = await fetch(
-        `https://constructionaimicroservice-production.up.railway.app/autofill`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ form_type: "rfis" }),
-        }
+      // Simulate an API call to generate AI response
+      const response = await new Promise((resolve) =>
+        setTimeout(
+          () =>
+            resolve(
+              "This is an AI-generated response based on the attached documents and drawings."
+            ),
+          2000
+        )
       );
-
-      const data = await response.json();
-
-      if (data?.suggested_data) {
-        const {
-          subject,
-          priority,
-          due_date,
-          assignee,
-          department,
-          description,
-        } = data.suggested_data;
-
-        setFormData((prev) => ({
-          ...prev,
-          subject: subject || "",
-          priority: priority || "",
-          due_date: due_date ? due_date.substring(0, 10) : "",
-          assignee: assignee || "",
-          department: department || "",
-          description: description || "",
-        }));
-      }
+      setAiResponse(response);
+      setShowAIResponseModal(true); // Show the AI response modal
+      toast.info("AI-generated suggestion is ready.");
     } catch (error) {
-      console.error("Autofill error:", error);
-      alert("Failed to fetch autofill data");
+      toast.error("Failed to generate AI response.");
+    } finally {
+      setLoadingAI(false);
     }
+  };
+
+  const handleSaveAIResponse = () => {
+    toast.success("AI response saved successfully!");
+    setShowAIResponseModal(false); // Close the modal
+  };
+
+  const handleAddResponse = () => {
+    if (!newResponse.trim()) {
+      toast.error("Response cannot be empty.");
+      return;
+    }
+
+    const response = {
+      text: newResponse,
+      role: "builder", // Example role, can be dynamic
+      timestamp: new Date().toISOString(),
+    };
+
+    setResponses((prev) => [...prev, response]);
+    setNewResponse(""); // Clear the input field
+    toast.success("Response added successfully!");
+  };
+
+  const handleDrawingStart = () => {
+    setIsDrawing(true);
+  };
+
+  const handleDrawingEnd = () => {
+    setIsDrawing(false);
+  };
+
+  const handleDrawingMove = (e) => {
+    if (!isDrawing) return;
+
+    const stage = stageRef.current;
+    const point = stage.getPointerPosition();
+    setDrawingShapes((prev) => [
+      ...prev,
+      { x: point.x, y: point.y, type: "circle", radius: 5, color: selectedColor },
+    ]);
+  };
+
+  const saveDrawing = () => {
+    setFormData((prev) => ({
+      ...prev,
+      drawingMarkup: drawingShapes,
+    }));
+    setShowDrawingModal(false);
+    toast.success("Drawing markup saved!");
   };
 
   return (
@@ -113,15 +159,9 @@ function AddRFIs() {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h5 className="fw-bold mb-0">New RFI</h5>
         <div className="d-flex gap-2 text-nowrap">
-          <button
-            className="btn bg-primary text-white"
-            onClick={handleAutofill}
-          >
-            autoFill
-          </button>
           <Link to="/rfis">
             <button className="btn set_btn text-white">
-              <i class="fa-solid fa-arrow-left me-2"></i>Back
+              <i className="fa-solid fa-arrow-left me-2"></i>Back
             </button>
           </Link>
         </div>
@@ -149,7 +189,9 @@ function AddRFIs() {
               value={formData.priority}
               onChange={handleInputChange}
             >
-               <option value="" disabled>Select priority</option>
+              <option value="" disabled>
+                Select priority
+              </option>
               <option value="High">High</option>
               <option value="Medium">Medium</option>
               <option value="Low">Low</option>
@@ -177,16 +219,14 @@ function AddRFIs() {
               value={formData.assignee}
               onChange={handleInputChange}
             >
-                <option value="" disabled>Select assignee</option>
-            {
-              users?.map((user) => (
-                
-                <option key={user._id} value={user._id}> {user.firstName} {user.lastName
-}</option>
-              ))
-            }
-
-              
+              <option value="" disabled>
+                Select assignee
+              </option>
+              {users?.map((user) => (
+                <option key={user._id} value={user._id}>
+                  {user.firstName} {user.lastName}
+                </option>
+              ))}
             </select>
           </div>
           <div className="col-md-6">
@@ -242,6 +282,16 @@ function AddRFIs() {
           </div>
         </div>
 
+        <div className="mb-4">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => setShowDrawingModal(true)}
+          >
+            Mark Area on Drawing
+          </button>
+        </div>
+
         <div className="d-flex justify-content-end gap-2">
           <button
             type="button"
@@ -255,6 +305,138 @@ function AddRFIs() {
           </button>
         </div>
       </form>
+     {/* Generate AI Response Section */}
+     <div className="mt-4">
+        <h5>Generate AI Response</h5>
+        <button
+          className="btn btn-info"
+          onClick={handleGenerateAIResponse}
+          disabled={loadingAI}
+        >
+          {loadingAI ? "Generating..." : "Generate AI Response"}
+        </button>
+      </div>
+      {/* Threaded Responses Section */}
+      <div className="mt-5">
+        <h5>Responses</h5>
+        <div className="bg-light p-3 rounded">
+          {responses.length > 0 ? (
+            responses.map((response, index) => (
+              <div key={index} className="mb-3">
+                <strong>{response.role}</strong> ({new Date(response.timestamp).toLocaleString()}):
+                <p>{response.text}</p>
+              </div>
+            ))
+          ) : (
+            <p>No responses yet.</p>
+          )}
+        </div>
+        <div className="mt-3">
+          <textarea
+            className="form-control"
+            rows="3"
+            placeholder="Add a response..."
+            value={newResponse}
+            onChange={(e) => setNewResponse(e.target.value)}
+          ></textarea>
+          <button className="btn btn-primary mt-2" onClick={handleAddResponse}>
+            Add Response
+          </button>
+        </div>
+      </div>
+
+ 
+
+      {/* AI Response Modal */}
+      <Modal
+        show={showAIResponseModal}
+        onHide={() => setShowAIResponseModal(false)}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>AI-Generated Response</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <textarea
+            className="form-control"
+            rows="6"
+            value={aiResponse}
+            onChange={(e) => setAiResponse(e.target.value)}
+          ></textarea>
+          <p className="text-muted mt-2">
+            Disclaimer: AI-generated draft. Review before submission.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowAIResponseModal(false)}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={handleSaveAIResponse}>
+            Save Response
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Drawing Markup Modal */}
+      <Modal show={showDrawingModal} onHide={() => setShowDrawingModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Mark Area on Drawing</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="mb-3">
+            <label className="form-label">Select Color</label>
+            <input
+              type="color"
+              className="form-control form-control-color"
+              value={selectedColor}
+              onChange={(e) => setSelectedColor(e.target.value)}
+            />
+          </div>
+          <div
+            style={{
+              border: "1px solid #ccc",
+              width: "100%",
+              height: "400px",
+              position: "relative",
+            }}
+          >
+            <Stage
+              width={window.innerWidth * 0.8}
+              height={400}
+              onMouseDown={handleDrawingStart}
+              onMouseUp={handleDrawingEnd}
+              onMouseMove={handleDrawingMove}
+              ref={stageRef}
+            >
+              <Layer>
+                {drawingShapes.map((shape, index) => (
+                  <Circle
+                    key={index}
+                    x={shape.x}
+                    y={shape.y}
+                    radius={shape.radius}
+                    fill={shape.color}
+                  />
+                ))}
+              </Layer>
+            </Stage>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              setShowDrawingModal(false);
+              setDrawingShapes([]);
+            }}
+          >
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={saveDrawing}>
+            Save Markup
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      
     </div>
   );
 }
