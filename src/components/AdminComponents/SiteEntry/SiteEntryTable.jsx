@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button, InputGroup, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import QRCode from "react-qr-code";
+
 import {
   deleteSiteEntry,
   fetchSiteEntries,
@@ -76,11 +78,18 @@ function SiteEntryTable() {
       {/* Header */}
       <div className="d-flex justify-content-between mb-3 ">
         <h4>Site Entry</h4>
-        <Link to="/siteEntry">
-          <button className="btn btn-primary">
-            <i className="fa-solid fa-plus me-2"></i>Site Entry
-          </button>
-        </Link>
+        <div className="">
+          <Link to="/siteEntry">
+            <button className="btn btn-primary me-2">
+              <i className="fa-solid fa-plus me-2"></i>Site Entry
+            </button>
+          </Link>
+          <Link to="/dailySiteEntryForm">
+            <button className="btn btn-primary me-2">
+              <i className="fa-solid fa-plus me-2"></i>Daily Site Entry
+            </button>
+          </Link>
+        </div>
       </div>
 
       <div className="d-flex flex-wrap gap-3 mb-3">
@@ -119,6 +128,7 @@ function SiteEntryTable() {
               <th>Site Supervisor</th>
               <th>Induction Date</th>
               <th>Site Location</th>
+              <th>QR Code</th>
               <th className="pe-4">Action</th>
             </tr>
           </thead>
@@ -134,6 +144,12 @@ function SiteEntryTable() {
                   <td>{entry.siteSupervisor}</td>
                   <td>{new Date(entry.inductionDate).toLocaleDateString()}</td>
                   <td>{entry.siteLocation}</td>
+                  <td>
+                    <QRCode
+                      value={`https://yourwebsite.com/site-entry/${entry._id}`}
+                      size={80}
+                    />
+                  </td>
                   <td className="pe-4">
                     <div className="d-flex gap-2">
                       <Link to={`/siteEntry/${entry._id}`}>
@@ -200,4 +216,3 @@ function SiteEntryTable() {
 }
 
 export default SiteEntryTable;
-

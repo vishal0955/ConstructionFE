@@ -93,6 +93,7 @@ import ProtectedRoute from "./routes/ProtectedRoutes";
 import SuperAdminDashboard from "./components/SuperAdmin/SuperAdminDashboard";
 import DefectDetails from "./components/AdminComponents/DefectList/DefectDetails";
 import ViewITPDetails from "./components/AdminComponents/ITPs/ViewITPDetails";
+import DailySiteEntryForm from "./components/AdminComponents/SiteEntry/DailySiteEntryForm";
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
@@ -118,9 +119,7 @@ function App() {
             <Route path="/Signup" element={<Register />} />
 
             {/* AdminComponents */}
-            <Route path="/dashboard" element={
-          <Dashboard />
-       } />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route
               path="/safety-compliance-dashboard"
               element={<SafetyComplianceDashboard />}
@@ -135,7 +134,7 @@ function App() {
               path="/ComplianceDashboard"
               element={<ComplianceDashboard></ComplianceDashboard>}
             ></Route>
-              <Route
+            <Route
               path="/AddNewWorker"
               element={<AddNewWorker></AddNewWorker>}
             ></Route>
@@ -151,6 +150,10 @@ function App() {
               element={<AddIncidentReports />}
             />
             <Route path="/siteEntry" element={<SiteEntry />} />
+            <Route
+              path="/dailySiteEntryForm"
+              element={<DailySiteEntryForm />}
+            />
             <Route path="/siteEntry/:id" element={<SiteEntry />} />
             <Route path="/siteEntryTable" element={<SiteEntryTable />} />
             <Route path="/siteReview" element={<SiteReview />} />
@@ -386,7 +389,10 @@ function App() {
             <Route path="/AddUserManagement" element={<AddUserManagement />} />
             <Route path="/Settings" element={<Settings />} />
             {/* super-admin */}
-            <Route path="/super-admin-dashboard" element={<SuperAdminDashboard />} />
+            <Route
+              path="/super-admin-dashboard"
+              element={<SuperAdminDashboard />}
+            />
             <Route path="/Plan-Package" element={<PlanPackage />} />
             <Route path="/Plan-request" element={<PlanRequest />} />
             <Route path="/user-info" element={<UserInfo />} />
