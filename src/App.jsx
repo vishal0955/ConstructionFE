@@ -93,7 +93,12 @@ import ProtectedRoute from "./routes/ProtectedRoutes";
 import SuperAdminDashboard from "./components/SuperAdmin/SuperAdminDashboard";
 import DefectDetails from "./components/AdminComponents/DefectList/DefectDetails";
 import ViewITPDetails from "./components/AdminComponents/ITPs/ViewITPDetails";
+<<<<<<< HEAD
 import DailySiteEntryForm from "./components/AdminComponents/SiteEntry/DailySiteEntryForm";
+=======
+import ViewAllLiveInductions from "./components/AdminComponents/Inductions/ViewAllLiveInductions";
+
+>>>>>>> 7329d27561901b7e156b1c575d94e6ccd6da6b27
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
@@ -319,6 +324,7 @@ function App() {
             <Route path="/AddnewSms" element={<AddnewSms />} />
             <Route path="/n" element={<NEW />} />
             <Route path="/IncidentReports" element={<IncidentReports />} />
+            <Route path="/ViewAllLiveInductions" element={<ViewAllLiveInductions />} />
             <Route
               path="/AddIncidentReports"
               element={<AddIncidentReports />}
