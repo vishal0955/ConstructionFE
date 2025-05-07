@@ -96,6 +96,8 @@ import ViewITPDetails from "./components/AdminComponents/ITPs/ViewITPDetails";
 import SWMSStepper from "./components/AdminComponents/SWMS/SWMSStepForm.jsx/SWMSStepper";
 import RFIs from "./components/AdminComponents/RFIs/RFIs";
 import AddRFIs from "./components/AdminComponents/RFIs/AddRFIs";
+import ViewAllLiveInductions from "./components/AdminComponents/Inductions/ViewAllLiveInductions";
+
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
@@ -321,6 +323,7 @@ function App() {
             <Route path="/AddnewSms" element={<AddnewSms />} />
             <Route path="/n" element={<NEW />} />
             <Route path="/IncidentReports" element={<IncidentReports />} />
+            <Route path="/ViewAllLiveInductions" element={<ViewAllLiveInductions />} />
             <Route
               path="/AddIncidentReports"
               element={<AddIncidentReports />}
