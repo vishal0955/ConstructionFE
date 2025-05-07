@@ -22,9 +22,13 @@ function AddDefectList() {
     assigned: "",
     priority: "Low",
     description: "",
-    status: "New",
+    status: "Open",
     comments: "",
     date: "",
+    trade: "",
+    area: "",
+    images: [],
+
   });
 
   const dispatch = useDispatch();
@@ -70,6 +74,7 @@ function AddDefectList() {
           comments: payload.comments,
           date: new Date(payload.date).toISOString().split("T")[0],
           image: payload.image || [],
+          trade: payload.trade,
         });
       });
     }
@@ -188,7 +193,20 @@ function AddDefectList() {
               value={formData.title}
             />
           </div>
+
+
           <div className="col-md-6">
+            <label className="form-label">Trade</label>
+            <input
+              type="text"
+              name="title"
+              className="form-control"
+              placeholder="Enter defect title"
+              onChange={handleChange}
+              value={formData.trade}
+            />
+          </div>
+          {/* <div className="col-md-6">
             <label className="form-label">
               Project Name{" "}
               <Link to={"/add-project"}>
@@ -216,10 +234,14 @@ function AddDefectList() {
                 ))}
               </select>
             )}
-          </div>
+          </div> */}
         </div>
 
+
+
         <div className="row g-3 mt-2">
+
+          {/*  TODO =>  show image form Drawing and user can mark location or drop pin */}
           <div className="col-md-6">
             <label className="form-label">Location</label>
             <input
@@ -231,7 +253,7 @@ function AddDefectList() {
               value={formData.location}
             />
           </div>
-          <div className="col-md-6">
+          {/* <div className="col-md-6">
             <label className="form-label d-flex justify-content-between align-items-center">
               <span>Category</span>
               <i
@@ -255,9 +277,9 @@ function AddDefectList() {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
         </div>
-
+{/* 
         <Modal
           show={showCategoryModal}
           onHide={() => setShowCategoryModal(false)}
@@ -285,11 +307,33 @@ function AddDefectList() {
               Save
             </Button>
           </Modal.Footer>
-        </Modal>
+        </Modal> */}
+            <div className="mt-3">
+          <label className="form-label">Description</label>
+          <textarea
+            name="description"
+            className="form-control"
+            placeholder="Describe the defect in detail"
+            rows={4}
+            onChange={handleChange}
+            value={formData.description}
+          />
+        </div>
+
+        <div className="mt-3">
+          <label className="form-label">Attachments</label>
+          <input
+            type="file"
+            className="form-control"
+            onChange={handleFileChange}
+          />
+        </div>
+
+
 
         <div className="row g-3 mt-2">
           <div className="col-md-6">
-           <label className="form-label">Assigned To</label>
+           <label className="form-label">Assigned To Subcontractor</label>
             <select
               name="assigned"
               className="form-select"
@@ -320,17 +364,17 @@ function AddDefectList() {
           </div>
         </div>
 
-        <div className="mt-3">
-          <label className="form-label">Description</label>
-          <textarea
-            name="description"
-            className="form-control"
-            placeholder="Describe the defect in detail"
-            rows={4}
-            onChange={handleChange}
-            value={formData.description}
-          />
-        </div>
+    
+{/*  isme add ke time status by defalt open hoga 
+Har defect ka status update step-by-step hona chahiye:
+
+Open – Jab raise hota hai
+
+In Progress – Jab kisi subcontractor ko diya gaya
+
+Ready for Review – Jab kaam complete hokar QA ke liye ready hai
+
+Closed – Jab QA/Reviewer approve kar deta */}
 
         <div className="row g-3 mt-3">
           <div className="col-md-6">
@@ -341,9 +385,9 @@ function AddDefectList() {
               onChange={handleChange}
               value={formData.status}
             >
-              <option>New</option>
+              <option>Open</option>
               <option>In Progress</option>
-              <option>Resolved</option>
+              <option>Ready for Review </option>
               <option>Closed</option>
             </select>
           </div>
@@ -361,14 +405,7 @@ function AddDefectList() {
           </div>
         </div>
 
-        <div className="mt-3">
-          <label className="form-label">Attachments</label>
-          <input
-            type="file"
-            className="form-control"
-            onChange={handleFileChange}
-          />
-        </div>
+      
 
         {formData.image?.length > 0 && (
   <div className="mt-2">
@@ -383,7 +420,7 @@ function AddDefectList() {
   </div>
 )}
 
-        <div className="mt-3">
+        {/* <div className="mt-3">
           <label className="form-label">Comments & Notes</label>
           <textarea
             name="comments"
@@ -393,7 +430,7 @@ function AddDefectList() {
             onChange={handleChange}
             value={formData.comments}
           />
-        </div>
+        </div> */}
 
         <div className="mt-4 d-flex gap-2">
           <button className="btn btn-outline-secondary">Save as Draft</button>

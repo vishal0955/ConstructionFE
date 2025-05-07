@@ -8,6 +8,10 @@ export default function SWMSForm({ onNext, onBack }) {
     companyName: '',
     responsiblePersonName: '',
     dateCreated: '2023-04-14',
+    principalContractorName: 'Melbourne Development Group',
+    principalContractorContact: 'James Wilson',
+    principalContractorPhone: '0412 345 678',
+
   });
 
   const handleChange = (e) => {
@@ -26,12 +30,12 @@ export default function SWMSForm({ onNext, onBack }) {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-blue-900 text-white p-4 flex items-center">
+      {/* <header className="bg-blue-900 text-white p-4 flex items-center">
         <button className="mr-2">
           <ChevronLeft size={24} />
         </button>
         <h1 className="text-xl font-medium">Create SWMS</h1>
-      </header>
+      </header> */}
 
       {/* Step indicator */}
       <div className="px-4 py-2 text-sm text-gray-600 border-b">
@@ -112,7 +116,14 @@ export default function SWMSForm({ onNext, onBack }) {
             <div className="space-y-3">
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Company Name</label>
-                <div className="p-3 bg-gray-100 rounded">Westbrook Construction Ltd</div>
+           
+                 <input
+                type="text"
+                value={formData.principalContractorName}
+                onChange={handleChange}
+                name="principalContractorName"
+                className="w-full p-3 bg-gray-100 border rounded"
+              />
               </div>
               
               <div>
@@ -140,8 +151,9 @@ export default function SWMSForm({ onNext, onBack }) {
               <label className="block text-sm font-medium mb-1">Name</label>
               <input
                 type="text"
-                value="Melbourne Development Group"
-                readOnly
+                value={formData.principalContractorName}
+                onChange={handleChange}
+                name="principalContractorName"
                 className="w-full p-3 bg-gray-100 border rounded"
               />
             </div>
@@ -150,7 +162,8 @@ export default function SWMSForm({ onNext, onBack }) {
               <label className="block text-sm font-medium mb-1">Contact Person</label>
               <input
                 type="text"
-                value="James Wilson"
+                value={formData.principalContractorContact}
+                onChange={handleChange}
                 readOnly
                 className="w-full p-3 bg-gray-100 border rounded"
               />
@@ -160,8 +173,8 @@ export default function SWMSForm({ onNext, onBack }) {
               <label className="block text-sm font-medium mb-1">Contact Number</label>
               <input
                 type="text"
-                value="0412 345 678"
-                readOnly
+                value={formData.principalContractorPhone}
+                onChange={handleChange}
                 className="w-full p-3 bg-gray-100 border rounded"
               />
             </div>
@@ -173,7 +186,7 @@ export default function SWMSForm({ onNext, onBack }) {
       <div className="p-4 border-t">
         <button
           onClick={onNext}
-          className="w-full bg-blue-600 text-white py-3 rounded font-medium"
+          className="w-full bg-blue-600 text-white p-3 rounded font-medium"
         >
           Next
         </button>

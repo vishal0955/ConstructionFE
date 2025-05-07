@@ -96,7 +96,10 @@ import ViewITPDetails from "./components/AdminComponents/ITPs/ViewITPDetails";
 import SWMSStepper from "./components/AdminComponents/SWMS/SWMSStepForm.jsx/SWMSStepper";
 import RFIs from "./components/AdminComponents/RFIs/RFIs";
 import AddRFIs from "./components/AdminComponents/RFIs/AddRFIs";
+import DailySiteEntryForm from "./components/AdminComponents/SiteEntry/DailySiteEntryForm";
 import ViewAllLiveInductions from "./components/AdminComponents/Inductions/ViewAllLiveInductions";
+import PPERegisterUI from "./components/AdminComponents/SafetyEquipment/PPERegisterUI";
+import HazardTemplateForm from "./components/AdminComponents/SWMS/Templateform";
 
 
 function App() {
@@ -128,6 +131,8 @@ function App() {
        } />
      <Route path="/SWMSStepper" element={<SWMSStepper />} />
 
+     <Route path="/HazardTemplateForm" element={<HazardTemplateForm />} />
+
             <Route
               path="/safety-compliance-dashboard"
               element={<SafetyComplianceDashboard />}
@@ -142,7 +147,7 @@ function App() {
               path="/ComplianceDashboard"
               element={<ComplianceDashboard></ComplianceDashboard>}
             ></Route>
-              <Route
+            <Route
               path="/AddNewWorker"
               element={<AddNewWorker></AddNewWorker>}
             ></Route>
@@ -158,6 +163,10 @@ function App() {
               element={<AddIncidentReports />}
             />
             <Route path="/siteEntry" element={<SiteEntry />} />
+            <Route
+              path="/dailySiteEntryForm"
+              element={<DailySiteEntryForm />}
+            />
             <Route path="/siteEntry/:id" element={<SiteEntry />} />
             <Route path="/siteEntryTable" element={<SiteEntryTable />} />
             <Route path="/siteReview" element={<SiteReview />} />
@@ -394,7 +403,10 @@ function App() {
             <Route path="/AddUserManagement" element={<AddUserManagement />} />
             <Route path="/Settings" element={<Settings />} />
             {/* super-admin */}
-            <Route path="/super-admin-dashboard" element={<SuperAdminDashboard />} />
+            <Route
+              path="/super-admin-dashboard"
+              element={<SuperAdminDashboard />}
+            />
             <Route path="/Plan-Package" element={<PlanPackage />} />
             <Route path="/Plan-request" element={<PlanRequest />} />
             <Route path="/user-info" element={<UserInfo />} />
@@ -402,6 +414,8 @@ function App() {
               path="/super-admin-setting"
               element={<SuperadminSetting />}
             />
+
+            <Route path="/pperegister" element={<PPERegisterUI />} />
           </Routes>
         </div>
       </div>

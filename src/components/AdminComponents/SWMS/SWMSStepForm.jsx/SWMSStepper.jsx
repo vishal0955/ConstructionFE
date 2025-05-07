@@ -3,6 +3,7 @@ import SWMSForm from './SWMSForm.jsx';
 import SWMSFormStep2 from './SWMSFormStep2.jsx';
 import SWMSFormStep3 from './SWMSFormStep3.jsx';
 import SWMSFormStep4 from './SWMSFormStep4.jsx';
+import { Link } from 'react-router-dom';
 
 const steps = [
   { label: 'SWMS Details', component: SWMSForm },
@@ -25,6 +26,26 @@ export default function SWMSStepper() {
   return (
     <div>
       {/* Stepper indicator */}
+      <div  >
+      <div className="d-flex align-items-center justify-content-end ">
+          {" "}
+          <button
+            className="btn"
+            style={{ backgroundColor: "#0d6efd", color: "white" }}
+            // onClick={fetchAutofillData}
+          >
+            autoFill
+          </button>
+          <Link to="/swms">
+          <button
+            
+            className="btn "
+            style={{ backgroundColor: "#0d6efd", color: "white" }}
+          >
+            <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview
+          </button>
+          </Link>
+        </div>
       <div className="flex items-center justify-center my-6 space-x-4">
         {steps.map((s, idx) => (
           <div key={s.label} className="flex items-center">
@@ -43,6 +64,9 @@ export default function SWMSStepper() {
           </div>
         ))}
       </div>
+
+      </div>
+    
       {/* Step content */}
       <div>
         <StepComponent

@@ -6,6 +6,12 @@ import {
   fetchDefects,
   deleteDefectList,
 } from "../../../redux/slices/defectSlice";
+import DefectsDashboard from "./DefectsDashboard";
+
+
+
+
+
 
 function DefectList() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -54,6 +60,7 @@ function DefectList() {
 
   return (
     <div className="container-fluid p-4">
+      <DefectsDashboard />
       <div className="bg-white p-4 rounded shadow">
         <div className="d-flex justify-content-between">
           <h4 className="fw-semibold mb-4">All Defect Lists</h4>

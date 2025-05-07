@@ -21,6 +21,8 @@ import Swal from "sweetalert2";
 
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import Template from "./Template";
+import SWMSAnalyticsSection from "./SWMSAnalyticsSection";
 
 function SWMS() {
   const [search, setSearch] = useState("");
@@ -191,7 +193,7 @@ function SWMS() {
           </Form.Select> */}
         </Col>
         <Col sm={12} md="auto" className="ms-md-auto">
-          <Link to={"/AddnewSms"}>
+          <Link to={"/SWMSStepper"}>
             <Button
               variant="primary"
               style={{
@@ -331,10 +333,11 @@ function SWMS() {
         </Card.Body>
       </Card>
       <h5 className="mb-3 mt-3" style={{ fontSize: "1rem", fontWeight: "500" }}>
-        Pre-Populated Templates
+     
       </h5>
       <Row className="mb-4 g-3">
-        {templates.map((template) => (
+      <Template />
+        {/* {templates.map((template) => (
           <Col sm={12} md={4} key={template.id}>
             <Card className="h-100 border border-secondary rounded-3">
               <Card.Body>
@@ -363,8 +366,11 @@ function SWMS() {
               </Card.Body>
             </Card>
           </Col>
-        ))}
+        ))} */}
       </Row>
+
+      <SWMSAnalyticsSection />
+
 
       {/* Inductions Overview List */}
     </Container>

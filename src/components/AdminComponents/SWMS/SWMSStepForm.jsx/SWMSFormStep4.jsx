@@ -17,18 +17,23 @@ export default function SWMSFormStep4({ onNext, onBack }) {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header with rating */}
-      <header className="bg-white p-4 flex flex-col items-center border-b">
+      <header className="bg-white p-4 flex justify-between items-center border-b">
         <h1 className="text-lg font-medium">Risk Assessment</h1>
-        <div className="flex items-center mt-1">
-          <div className="flex">
-            {[1, 2, 3, 4].map((star) => (
-              <svg key={star} className="w-4 h-4 text-blue-500 fill-current" viewBox="0 0 24 24">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-              </svg>
-            ))}
-          </div>
+        <div className="flex items-center justify-center mt-1">
+       
           <span className="text-xs text-gray-500 ml-2">Step 4 of 4</span>
+          
         </div>
+        <div className="flex items-center mt-1">
+
+<button className="bg-blue-600 text-white px-4 py-2 rounded-md mr-2">download PDF</button>
+
+<button className="bg-blue-600 text-white px-4 py-2 rounded-md">
+share via Email </button>
+ 
+ </div>
+
+       
       </header>
 
       <div className="flex-1 overflow-auto">

@@ -43,6 +43,8 @@ import {
   Form,
 } from "react-bootstrap";
 import { FaEdit } from "react-icons/fa";
+import LiveAttendanceTracker from "./LiveAttendanceTracker";
+import DailyEntryAnalytics from "./DailyEntryAnalytics";
 
 function Dashboard() {
   const [key, setKey] = useState("projectInfo");
@@ -309,6 +311,15 @@ function Dashboard() {
             <Nav.Item>
               <Nav.Link eventKey="siteDetails">Site Details</Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="liveAttendance"> LiveAttendance</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="dailyEntryAnalytics">
+                {" "}
+                DailyEntryAnalytics
+              </Nav.Link>
+            </Nav.Item>
           </Nav>
 
           <Tab.Content>
@@ -471,13 +482,32 @@ function Dashboard() {
                         alt="Site Map"
                         className="img-fluid mb-2"
                       />
-                      <Link to={'/FullSiteMap'}>
+                      <Link to={"/FullSiteMap"}>
                         <Button variant="primary" className="w-100">
                           📍 View Full Site Map
                         </Button>
                       </Link>
                     </div>
                   </div>
+                </Card.Body>
+              </Card>
+            </Tab.Pane>
+
+            {/* -------- Live attendece -------- */}
+            <Tab.Pane eventKey="liveAttendance">
+              <Card>
+                <Card.Body>
+                  {/* Live Attendace componets render */}
+                  <LiveAttendanceTracker />
+                </Card.Body>
+              </Card>
+            </Tab.Pane>
+
+            {/* DailyEntryAnalytics */}
+            <Tab.Pane eventKey="dailyEntryAnalytics">
+              <Card>
+                <Card.Body>
+                  <DailyEntryAnalytics />
                 </Card.Body>
               </Card>
             </Tab.Pane>
