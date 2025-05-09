@@ -28,7 +28,7 @@ export default function SWMSForm({ onNext, onBack }) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen ">
       {/* Header */}
       {/* <header className="bg-blue-900 text-white p-4 flex items-center">
         <button className="mr-2">
@@ -54,7 +54,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 placeholder="Enter SWMS name"
                 value={formData.swmsName}
                 onChange={handleChange}
-                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
 
@@ -67,7 +68,8 @@ export default function SWMSForm({ onNext, onBack }) {
                   placeholder="Enter site address"
                   value={formData.siteAddress}
                   onChange={handleChange}
-                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                 />
                 <MapPin className="absolute right-3 top-3 text-gray-400" size={20} />
               </div>
@@ -81,7 +83,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 placeholder="Enter company name"
                 value={formData.companyName}
                 onChange={handleChange}
-                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
 
@@ -93,7 +96,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 placeholder="Enter responsible person name"
                 value={formData.responsiblePersonName}
                 onChange={handleChange}
-                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
 
@@ -104,7 +108,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 name="dateCreated"
                 value={formData.dateCreated}
                 onChange={handleChange}
-                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
           </div>
@@ -122,23 +127,50 @@ export default function SWMSForm({ onNext, onBack }) {
                 value={formData.principalContractorName}
                 onChange={handleChange}
                 name="principalContractorName"
-                className="w-full p-3 bg-gray-100 border rounded"
+                 className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
               </div>
               
               <div>
                 <label className="block text-sm text-gray-600 mb-1">ABN</label>
-                <div className="p-3 bg-gray-100 rounded">45 976 543 210</div>
+                {/* <div className="p-3 bg-gray-100 rounded">45 976 543 210</div> */}
+                <input
+                type="text"
+                value={formData.abn}
+                onChange={handleChange}
+                name="abn"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              />
               </div>
               
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Address</label>
-                <div className="p-3 bg-gray-100 rounded">42 Construction Way, Melbourne VIC 3000</div>
+                {/* <div className="p-3 bg-gray-100 rounded">42 Construction Way, Melbourne VIC 3000</div> */}
+                <input
+                type="text"
+                value={formData.abn}
+                onChange={handleChange}
+                placeholder='42 Construction Way, Melbourne VIC 3000'
+                name="abn"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              />
               </div>
               
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Contact Number</label>
-                <div className="p-3 bg-gray-100 rounded">(03) 9876 5432</div>
+                {/* <div className="p-3 bg-gray-100 rounded">(03) 9876 5432</div> */}
+                <input
+                type="text"
+                value={formData.abn}
+                onChange={handleChange}
+                placeholder='(03) 9876 5432'
+                name="abn"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
+              />
               </div>
             </div>
           </div>
@@ -154,7 +186,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 value={formData.principalContractorName}
                 onChange={handleChange}
                 name="principalContractorName"
-                className="w-full p-3 bg-gray-100 border rounded"
+                    className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
             
@@ -165,7 +198,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 value={formData.principalContractorContact}
                 onChange={handleChange}
                 readOnly
-                className="w-full p-3 bg-gray-100 border rounded"
+                   className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
             
@@ -175,7 +209,8 @@ export default function SWMSForm({ onNext, onBack }) {
                 type="text"
                 value={formData.principalContractorPhone}
                 onChange={handleChange}
-                className="w-full p-3 bg-gray-100 border rounded"
+                  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               />
             </div>
           </div>

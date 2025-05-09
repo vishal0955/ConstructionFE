@@ -157,7 +157,7 @@ function AddSiteReview() {
         </Link>
       </div>
 
-      <form onSubmit={handleSubmit} encType="multipart/form-data" style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data" style={{ padding: '20px', borderRadius: '8px' }}>
         <div className="row mb-3">
           <div className="col-md-6">
             <label className="form-label">Site Name</label>

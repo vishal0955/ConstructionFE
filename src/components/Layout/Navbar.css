@@ -254,3 +254,26 @@
         margin-bottom: 1rem;
     }
   }
+
+  /* Dark mode for navbar */
+[data-theme='dark'] .navbar {
+  background-color: #181818 !important;
+  color: #f5f5f5 !important;
+}
+
+[data-theme='dark'] .navbar .profile-info .profile-name,
+[data-theme='dark'] .navbar .profile-info .profile-role {
+  color: #f5f5f5 !important;
+}
+
+[data-theme='dark'] .navbar .dropdown-menu {
+  background-color: #23272f !important;
+  color: #f5f5f5 !important;
+}
+
+[data-theme='dark'] .navbar .dropdown-item {
+  color: #f5f5f5 !important;
+}
+[data-theme='dark'] .navbar .dropdown-item:hover {
+  background-color: #222 !important;
+}

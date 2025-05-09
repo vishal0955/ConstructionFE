@@ -178,8 +178,8 @@ function ToolboxTalks() {
     <div>
       <h3 className="mt-2 mb-0">Toolbox Talk</h3>
       <div
-        className="container-fluid bg-light p-4"
-        style={{ fontFamily: "Arial, sans-serif" }}
+        className="container-fluid  p-4"
+       
       >
         {/* Top Stats */}
         <div className="row gx-3 gy-3 text-center mb-4">
@@ -204,7 +204,7 @@ function ToolboxTalks() {
             },
           ].map((card, i) => (
             <div className="col-md-3" key={i}>
-              <div className="bg-white p-3 rounded shadow-sm h-100 d-flex flex-column justify-content-center">
+              <div className="stats-card p-3 rounded shadow-sm h-100 d-flex flex-column justify-content-center">
                 <h6 className="text-muted">{card.title}</h6>
                 <h2 className={card.className}>{card.value}</h2>
                 <p className="text-muted mb-0">{card.note}</p>
@@ -446,7 +446,7 @@ function ToolboxTalks() {
             </div>
 
             {/* Analytics Section */}
-            <div className="bg-white p-4 rounded shadow-sm">
+            <div className="stats-card  p-4 rounded shadow-sm">
               <h6 className="mb-3">Analytics</h6>
               <div style={{ height: "200px" }}>
                 <canvas ref={chartRef}></canvas>

@@ -66,8 +66,8 @@ const SWMSAnalyticsSection = () => {
   }));
 
   return (
-    <section className=" bg-gray-50 rounded-xl mt-6">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">SWMS Analytics Overview</h2>
+    <section className="  rounded-xl mt-6">
+      <h2 className="text-xl font-semibold mb-4 ">SWMS Analytics Overview</h2>
 
       {/* Stat Cards */}
       <div className="flex gap-4 mb-8 mx-auto">
@@ -80,7 +80,7 @@ const SWMSAnalyticsSection = () => {
       {/* Charts */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Bar Chart */}
-        <div className="bg-white p-4 rounded-xl shadow">
+        <div className=" p-4 rounded-xl shadow">
           <h3 className="text-md font-medium mb-2">SWMS by Status</h3>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={barData}>
@@ -93,7 +93,7 @@ const SWMSAnalyticsSection = () => {
         </div>
 
         {/* Pie Chart */}
-        <div className="bg-white p-4 rounded-xl shadow">
+        <div className=" p-4 rounded-xl shadow">
           <h3 className="text-md font-medium mb-2">Compliance Breakdown</h3>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
@@ -116,9 +116,9 @@ const SWMSAnalyticsSection = () => {
       </div>
 
       {/* Common High-Risk Hazards */}
-      <div className="bg-white mt-8 p-4 rounded-xl shadow">
+      <div className="stats-card mt-8 p-4 rounded-xl shadow">
         <h3 className="text-md font-medium mb-3">Most Common High-Risk Hazards</h3>
-        <ul className="list-disc pl-5 text-gray-700">
+        <ul className="list-disc pl-5 ">
           {analytics.commonHighRiskItems.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}

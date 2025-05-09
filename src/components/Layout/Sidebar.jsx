@@ -447,7 +447,6 @@ import {
   MdAnnouncement,
 } from "react-icons/md";
 
-
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
   const [activeMenuIndex, setActiveMenuIndex] = useState(null);
@@ -470,7 +469,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { title: "Incident Reports", path: "/incidentReports" },
         { title: "Site Entry", path: "/siteEntryTable" },
         { title: "Site Review", path: "/siteReview" },
-        { title: "Audit Equipment", path: "/audit-equipment" },
+        
         { title: "Safety Equipment", path: "/safety-equipment" },
       ],
     },
@@ -487,7 +486,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     {
       title: "Plant & Machinery",
       icon: <FaHome className="menu-icon" />,
-      path: "/plantMachinery",
+      submenu: [
+        { title: "Plant & Machinery", path: "/plantMachinery" },
+       { title: "Pre-Start Checklist",  path: "/auditreport"  },
+      ],
+     
     },
     {
       title: "Communication",
@@ -560,7 +563,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       path: "/helpSupport",
     },
 
-
     {
       title: "Dashboard",
       icon: <FaHome className="menu-icon" />,
@@ -610,7 +612,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const filteredMenuItems = menuItems.filter((item) => {
     if (roledata === "admin") {
-      return true;
+      const hiddenAdminPaths = [
+        "/super-admin-dashboard",
+        "/Plan-Package",
+        "/Plan-request",
+        "/user-info",
+        "/super-admin-setting",
+      ];
+      return !hiddenAdminPaths.includes(item.path);
     } else if (roledata === "superadmin") {
       const superAdminMenuItems = [
         "/super-admin-dashboard",
@@ -666,13 +675,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     }
     return false;
   });
-  
 
   return (
     <div className={`sidebar ${isOpen ? "expanded" : "collapsed"}`}>
       <div className="sidebar-header">
         <div className="logo">
-          <span className="logo-text">Construction</span>
+        <img src="https://i.ibb.co/NnWcJ8D7/image.png" alt="logo" />
         </div>
       </div>
       <ul className="menu">
@@ -732,7 +740,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </li>
         ))}
       </ul>
-
     </div>
   );
 };

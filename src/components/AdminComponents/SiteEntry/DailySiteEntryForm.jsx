@@ -46,7 +46,7 @@ const DailySiteEntryForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="p-4 border rounded bg-light shadow-sm"
+      className="p-4 border rounded  shadow-sm"
     >
       <div className="d-flex align-items-center  justify-content-between">
         <h4 className="mb-3">📋 Daily Site Entry Checklist</h4>

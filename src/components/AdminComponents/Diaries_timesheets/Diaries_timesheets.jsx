@@ -279,13 +279,13 @@ export default function DiariesTimesheets() {
   if (loading) return <p>Loading diaries...</p>;
   if (error) return <p>Error: {error}</p>;
   return (
-    <Container fluid className="p-4 bg-light">
+    <Container fluid className="p-4 ">
       <h4 className="mb-4">Diaries & Timesheets</h4>
       {/* Top Section */}
       <Row className="mb-4 gx-4">
         {/* Today’s Overview */}
         <Col md={4}>
-          <div className="bg-white p-4 rounded shadow-sm h-100 border">
+          <div className=" p-4 rounded shadow-sm h-100 border">
             <h6 className="fw-semibold mb-4">Today's Overview</h6>
             <Row className="mb-4">
               <Col>

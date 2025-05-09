@@ -15,9 +15,9 @@ export default function SWMSFormStep4({ onNext, onBack }) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen ">
       {/* Header with rating */}
-      <header className="bg-white p-4 flex justify-between items-center border-b">
+      <header className=" p-4 flex justify-between items-center border-b">
         <h1 className="text-lg font-medium">Risk Assessment</h1>
         <div className="flex items-center justify-center mt-1">
        

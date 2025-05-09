@@ -116,6 +116,10 @@
     width: 100%;
   }
 
+
+  [data-theme="dark"] .sidebar-header {
+    background-color:  #131413;
+  }
   .logo {
     display: flex;
     align-items: center;
@@ -211,7 +215,18 @@
     color: #0052CC;
     opacity: 0.9;
   }
-  
+  [data-theme="dark"] .menu-icon {
+    color: #FFD700;
+  }
+
+ .menu-icon :hover {
+    color: #bead3a;
+  }
+
+  [data-theme="dark"] .menu-item:hover .menu-icon {
+    color: #FFD700 !important;
+  }
+
   .menu-i {
     display: flex;
     align-items: center;
@@ -227,6 +242,9 @@
     color: #344563;
   }
   
+  [data-theme="dark"] .menu-text {
+    color: #fff;
+  }
   .sidebar.collapsed .menu-text {
     display: none;
   }

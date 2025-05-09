@@ -963,7 +963,7 @@ import { FiEdit, FiUser, FiCheckCircle, FiDownload } from "react-icons/fi";
 function Checklists() {
   return (
     <div className="container-fluid px-4 py-4">
-      <div className="bg-white p-4 rounded shadow-sm">
+      <div className=" p-4 rounded shadow-sm">
        <div className="d-flex">
        <h5 className="fw-bold mb-4 fs-3">All Checklists</h5>
         <div className="col-12 col-sm-auto ms-sm-auto">

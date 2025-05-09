@@ -163,7 +163,7 @@ function SWMS() {
     <Container
       fluid
       className="p-4"
-      style={{ backgroundColor: "#f8f9fa", minHeight: "100vh" }}
+      style={{  minHeight: "100vh" }}
     >
       {/* Templates Section */}
       <div className="dashboard-header">

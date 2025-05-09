@@ -34,7 +34,7 @@ function Doc3DBeamModeling() {
         <div className="col ps-3 d-flex align-items-center">
           <h2 className="h4 fw-semibold mb-0">Documents</h2>
         </div>
-        <div className="col-auto pe-3 d-flex align-items-center gap-3">
+        {/* <div className="col-auto pe-3 d-flex align-items-center gap-3">
           <div className="d-flex align-items-center gap-1">
             <IoNotificationsSharp style={{ width: "20px", height: "20px", color:"#0041a8"}} />
             <RiAdminFill
@@ -47,7 +47,7 @@ function Doc3DBeamModeling() {
               <p className="small text-secondary mb-0">Project Manager</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Main Content Area */}
@@ -75,7 +75,7 @@ function Doc3DBeamModeling() {
                 {/* Title and buttons */}
                 <div className="card-body px-2">
                   <div className="d-flex justify-content-between align-items-center">
-                    <h6 className="card-title  fw-semibold text-dark text-truncate ">
+                    <h6 className="card-title  fw-semibold  text-truncate ">
                       BIM Building Model v1.3
                     </h6>
                     <div className="d-flex justify-content-end gap-2">
@@ -108,7 +108,7 @@ function Doc3DBeamModeling() {
                 {/* Title and buttons */}
                 <div className="card-body px-2 py-3">
                   <div className="d-flex justify-content-between align-items-center">
-                    <h6 className="card-title mb-2 fw-semibold text-dark text-truncate">
+                    <h6 className="card-title mb-2 fw-semibold  text-truncate">
                       MEP Systems Model v2.1
                     </h6>
                     <div className="d-flex justify-content-end gap-2">
@@ -141,7 +141,7 @@ function Doc3DBeamModeling() {
                 {/* Title and buttons */}
                 <div className="card-body px-2 py-3">
                   <div className="d-flex justify-content-between align-items-center">
-                    <h6 className="card-title mb-2 fw-semibold text-dark text-truncate">
+                    <h6 className="card-title mb-2 fw-semibold  text-truncate">
                       Structural Model v1.5
                     </h6>
                     <div className="d-flex justify-content-end gap-2">
@@ -201,7 +201,7 @@ function Doc3DBeamModeling() {
                   <li className="mb-2">
                     <a
                       href="#"
-                      className="text-dark "
+                      className=" "
                       style={{ textDecoration: "none" }}
                     >
                       Add Markup to Drawings
@@ -210,7 +210,7 @@ function Doc3DBeamModeling() {
                   <li className="mb-2">
                     <a
                       href="#"
-                      className="text-dark"
+                      className=""
                       style={{ textDecoration: "none" }}
                     >
                       Generate RFI from Markup
@@ -219,7 +219,7 @@ function Doc3DBeamModeling() {
                   <li className="mb-2">
                     <a
                       href="#"
-                      className="text-dark"
+                      className=""
                       style={{ textDecoration: "none" }}
                     >
                       Approve or Request Revision

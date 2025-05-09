@@ -96,13 +96,13 @@ const AiAssistant = () => {
     //   </Row>
     // </Container>
 
-    <Container fluid className="bg-light min-vh-100">
+    <Container fluid className=" min-vh-100">
       <h5 className="fw-bold mb-4">AI Assistant</h5>
 
       <Row className="justify-content-center">
         <Col lg={8}>
           <div
-            className="chat-box bg-white p-4 rounded shadow-sm mb-4"
+            className="chat-box bg-white  dark:bg-gray-800 p-4 rounded shadow-sm mb-4 border border-0 border-gray-300 "
             style={{ maxHeight: "70vh", overflowY: "auto" }}
           >
             {messages.map((msg, idx) =>

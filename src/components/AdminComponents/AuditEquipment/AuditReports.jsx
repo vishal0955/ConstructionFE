@@ -439,7 +439,7 @@ useEffect(() => {
     <Container
       fluid
       className="p-4"
-      style={{ backgroundColor: "#f8f9fa", minHeight: "100vh" }}
+      style={{ minHeight: "100vh" }}
     >
       {/* Header Section */}
       <div className="dashboard-header">
@@ -469,6 +469,19 @@ useEffect(() => {
             <option>Pending</option>
           </Form.Select>
         </Col>
+
+        <Col sm={12} md={2}>
+          <Form.Select
+            style={{ borderRadius: "4px", border: "1px solid #dee2e6" }}
+          >
+            <option>All</option>
+            <option>Excavator</option>
+            <option>Drill</option>
+            <option>Forklane</option>
+           
+            <option>Crane</option>
+          </Form.Select>
+        </Col>
         
         <Col sm={12} md="auto" className="ms-md-auto">
           <Link to={"/audit-equipment"}>
@@ -483,7 +496,7 @@ useEffect(() => {
                 fontWeight: "500",
               }}
             >
-              + Create New Audit Report
+              + Create New Audit Template
             </Button>
           </Link>
         </Col>

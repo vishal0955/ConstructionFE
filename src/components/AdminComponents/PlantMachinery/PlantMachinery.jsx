@@ -524,7 +524,7 @@ function PlantMachinery() {
       {/* Statistics Overview */}
       <div className="row g-3 mb-4">
         <div className="col-md-4">
-          <div className="bg-white p-3 rounded shadow-sm">
+          <div className="stats-card  p-3 rounded shadow-sm">
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <h6 className="text-muted mb-1">Total Equipment</h6>
@@ -550,7 +550,7 @@ function PlantMachinery() {
           </div>
         </div> */}
         <div className="col-md-4">
-          <div className="bg-white p-3 rounded shadow-sm">
+          <div className="stats-card p-3 rounded shadow-sm">
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <h6 className="text-muted mb-1">Total Tools</h6>
@@ -563,7 +563,7 @@ function PlantMachinery() {
           </div>
         </div>
         <div className="col-md-4">
-          <div className="bg-white p-3 rounded shadow-sm">
+          <div className="stats-card p-3 rounded shadow-sm">
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <h6 className="text-muted mb-1">Checked Out</h6>
@@ -582,8 +582,8 @@ function PlantMachinery() {
         <button
           className="nav-link"
           style={{
-            backgroundColor: activeTab === "Tool Registry" ? "#0052CC" : "",
-            color: activeTab === "Tool Registry" ? "#fff" : "",
+            backgroundColor: activeTab === "Tool Registry" ? "#fff" : "",
+            color: activeTab === "Tool Registry" ? "#181818" : "",
             borderRadius: "4px 4px 0 0",
           }}
           onClick={() => setActiveTab("Tool Registry")}
@@ -593,8 +593,8 @@ function PlantMachinery() {
         <button
           className="nav-link"
           style={{
-            backgroundColor: activeTab === "Equipment" ? "#0052CC" : "",
-            color: activeTab === "Equipment" ? "#fff" : "",
+            backgroundColor: activeTab === "Equipment" ? "#fff" : "",
+            color: activeTab === "Equipment" ? "#181818" : "",
             borderRadius: "4px 4px 0 0",
           }}
           onClick={() => setActiveTab("Equipment")}
@@ -604,8 +604,8 @@ function PlantMachinery() {
         <button
           className="nav-link"
           style={{
-            backgroundColor: activeTab === "Services" ? "#0052CC" : "",
-            color: activeTab === "Services" ? "#fff" : "",
+            backgroundColor: activeTab === "Services" ? "#fff" : "",
+            color: activeTab === "Services" ? "#181818" : "",
             borderRadius: "4px 4px 0 0",
           }}
           onClick={() => setActiveTab("Services")}

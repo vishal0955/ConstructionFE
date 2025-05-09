@@ -335,6 +335,16 @@ const sortTable = (key) => {
     <Container fluid className="py-4">
       <div className="d-flex align-items-center justify-content-between mb-4">
         <h3 className="fw-bold">Live Induction Tracker</h3>
+        <Link to="/ViewAllLiveInductions">
+                <Button
+                  variant="primary"
+                  className="w-100 border-0 shadow py-2 mt-2"
+                >
+                  <i className="fas fa-users me-2 text-white"></i>
+                  View All Live Inductions
+                </Button>
+              </Link>
+
         <Link to="/AddnewInduction">
           <Button
             style={{ backgroundColor: "#0d6efd", border: "none" }}
@@ -352,7 +362,7 @@ const sortTable = (key) => {
       </div>
 
       {/* User Details Cards */}
-      <Row className="mb-5 g-4">
+      {/* <Row className="mb-5 g-4">
         <Col md={4}>
           <Card className="border-0 shadow h-100">
             <Card.Body>
@@ -364,15 +374,7 @@ const sortTable = (key) => {
                 <br />
                 <small>Induction Valid Till: 12/12/2023</small>
               </div>
-              <Link to="/ViewAllLiveInductions">
-                <Button
-                  variant="primary"
-                  className="w-100 border-0 shadow py-2 mt-2"
-                >
-                  <i className="fas fa-users me-2 text-white"></i>
-                  View All Live Inductions
-                </Button>
-              </Link>
+            
             </Card.Body>
           </Card>
         </Col>
@@ -387,15 +389,7 @@ const sortTable = (key) => {
                 <br />
                 <small>Induction Valid Till: 10/11/2023</small>
               </div>
-              <Link to="/ViewAllLiveInductions">
-                <Button
-                  variant="primary"
-                  className="w-100 border-0 shadow py-2 mt-2"
-                >
-                  <i className="fas fa-users me-2 text-white"></i>
-                  View All Live Inductions
-                </Button>
-              </Link>
+         
             </Card.Body>
           </Card>
         </Col>
@@ -410,19 +404,11 @@ const sortTable = (key) => {
                 <br />
                 <small>Induction Valid Till: 01/10/2023</small>
               </div>
-              <Link to="/ViewAllLiveInductions">
-                <Button
-                  variant="primary"
-                  className="w-100 border-0 shadow py-2 mt-2"
-                >
-                  <i className="fas fa-users me-2 text-white"></i>
-                  View All Live Inductions
-                </Button>
-              </Link>
+            
             </Card.Body>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
 
       {/* Quick Actions */}
       <h5 className="mb-3">Quick Actions</h5>

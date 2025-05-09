@@ -18,7 +18,7 @@ export default function SWMSFormStep3({onNext, onBack}) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen ">
       {/* Header */}
       <header className="bg-white p-4 border-b flex items-center">
         <ArrowLeft className="mr-2" size={20} />
@@ -108,7 +108,7 @@ export default function SWMSFormStep3({onNext, onBack}) {
               {/* Control Measures */}
               <div className="mb-4">
                 <h3 className="text-sm font-medium mb-2">Control Measures</h3>
-                <div className="bg-gray-50 p-3 rounded-md">
+                <div className="p-3 rounded-md border border-yellow-600 bg-yellow-50 text-dark">
                   <p className="text-sm">All workers must wear appropriate safety harnesses and be properly trained in height safety protocols.</p>
                 </div>
               </div>
@@ -119,12 +119,14 @@ export default function SWMSFormStep3({onNext, onBack}) {
                   <input
                     type="text"
                     placeholder="Enter name"
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Control Verification</label>
-                  <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <select  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500  
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400">
                     <option>Implemented</option>
                     <option>Pending</option>
                     <option>Not Implemented</option>
@@ -154,7 +156,7 @@ export default function SWMSFormStep3({onNext, onBack}) {
               {/* Content for electrical shock section */}
               <div className="mb-4">
                 <h3 className="text-sm font-medium mb-2">Control Measures</h3>
-                <div className="bg-gray-50 p-3 rounded-md">
+                <div className=" p-3 rounded-md border border-yellow-600 bg-yellow-50 text-dark">
                   <p className="text-sm">Use insulated tools and equipment. Ensure all electrical equipment is tested and tagged.</p>
                 </div>
               </div>
@@ -165,12 +167,14 @@ export default function SWMSFormStep3({onNext, onBack}) {
                   <input
                     type="text"
                     placeholder="Enter name"
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Control Verification</label>
-                  <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <select className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400">
                     <option>Implemented</option>
                     <option>Pending</option>
                     <option>Not Implemented</option>
@@ -200,7 +204,7 @@ export default function SWMSFormStep3({onNext, onBack}) {
               {/* Content for struck by objects section */}
               <div className="mb-4">
                 <h3 className="text-sm font-medium mb-2">Control Measures</h3>
-                <div className="bg-gray-50 p-3 rounded-md">
+                <div className="p-3 rounded-md border border-yellow-600 bg-yellow-50 text-dark">
                   <p className="text-sm">Establish exclusion zones. All workers must wear hard hats in designated areas.</p>
                 </div>
               </div>
@@ -211,12 +215,14 @@ export default function SWMSFormStep3({onNext, onBack}) {
                   <input
                     type="text"
                     placeholder="Enter name"
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                     className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Control Verification</label>
-                  <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <select  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400">
                     <option>Implemented</option>
                     <option>Pending</option>
                     <option>Not Implemented</option>
@@ -246,7 +252,7 @@ export default function SWMSFormStep3({onNext, onBack}) {
               {/* Content for harmful substances section */}
               <div className="mb-4">
                 <h3 className="text-sm font-medium mb-2">Control Measures</h3>
-                <div className="bg-gray-50 p-3 rounded-md">
+                <div className="p-3 rounded-md border border-yellow-600 bg-yellow-50 text-dark">
                   <p className="text-sm">Use appropriate PPE. Ensure adequate ventilation in work areas.</p>
                 </div>
               </div>
@@ -257,12 +263,14 @@ export default function SWMSFormStep3({onNext, onBack}) {
                   <input
                     type="text"
                     placeholder="Enter name"
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                     className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-1">Control Verification</label>
-                  <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <select  className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400">
                     <option>Implemented</option>
                     <option>Pending</option>
                     <option>Not Implemented</option>

@@ -169,7 +169,7 @@ export default function SWMSFormStep2({ onNext, onBack }) {
 
  
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen  dark:border-solid  dark:border-gray-700 ">
       {/* Header */}
       <header className="p-4 border-b">
         <h1 className="text-lg font-medium">Task & Hazards</h1>
@@ -207,7 +207,7 @@ export default function SWMSFormStep2({ onNext, onBack }) {
                 {activityOptions.map((option) => (
                   <label
                     key={option}
-                    className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    className="flex items-center px-4 py-2  cursor-pointer"
                   >
                     <input
                       type="checkbox"

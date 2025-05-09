@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Container, Table, Form, Button } from "react-bootstrap";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function ViewAllLiveInductions() {
+
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState({ siteLocation: "", role: "", supervisor: "" });
 
@@ -23,7 +26,13 @@ function ViewAllLiveInductions() {
 
   return (
     <Container className="py-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
       <h3 className="fw-bold mb-4">All Live Inductions</h3>
+      <Button variant="primary" onClick={() => navigate(-1)}>
+        <i className="bi bi-arrow-left"></i>
+             Back to Overview
+      </Button>
+      </div>
 
       {/* Filters */}
       <div className="d-flex flex-wrap gap-3 mb-4">

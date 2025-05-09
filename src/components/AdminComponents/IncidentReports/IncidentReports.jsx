@@ -14,33 +14,9 @@ import {
 } from "../../../redux/slices/incidentReportSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
+import SafetyAnalyticsPanel from "./SafetyAnalyticsPanel";
 
-const safetyProtocols = [
-  { id: 1, text: "Initial containment measures implemented", completed: true },
-  { id: 2, text: "Safety team notified", completed: true },
-  { id: 3, text: "Model behavior analysis completed", completed: false },
-  { id: 4, text: "Mitigation strategy implemented", completed: false },
-];
-const timelineEvents = [
-  {
-    id: 1,
-    title: "Incident Detected",
-    time: "14:30 UTC",
-    description: "Automated monitoring system flagged anomalous behavior",
-  },
-  {
-    id: 2,
-    title: "Safety Protocols Initiated",
-    time: "14:35 UTC",
-    description: "Emergency response team activated",
-  },
-  {
-    id: 3,
-    title: "Analysis In Progress",
-    time: "14:40 UTC",
-    description: "Technical team investigating root cause",
-  },
-];
+
 
 function IncidentReports() {
   const { reports } = useSelector((state) => state.reports);
@@ -158,6 +134,11 @@ function IncidentReports() {
           
         </div>
 
+{/*  this  buttton will generate insights from all the incidents report */}
+        <Button variant="primary" className="shadow-sm p-2  rounded">
+        Generate Insights Report
+        </Button>
+
         <Link to="/AddIncidentReports">
           <Button variant="primary" className="shadow-sm px-3 py-2 rounded">
             + New Incident Report
@@ -228,6 +209,21 @@ function IncidentReports() {
                       >
                         <i className="fas fa-trash  text-danger"></i>
                       </Button>
+<Link to={`/IncidentReportDetail/${incident._id}`}>
+                      <Button 
+                        variant="link"
+                        className="text-primary p-0"
+                        >
+                        <i className="fa-solid fa-eye"></i>
+                        </Button>
+                        </Link>
+
+                      <Button
+                        variant="primary"
+                        className="text-white p-0 ms-2"
+                    // onClick={() => handleDelete(incident._id)}
+                      > Report
+                        </Button>
                     </td>
                   </tr>
                 ))
@@ -259,6 +255,7 @@ function IncidentReports() {
             </Button>
           ))}
 
+
           <Button
             size="sm"
             variant="outline-secondary"
@@ -271,139 +268,10 @@ function IncidentReports() {
           </Button>
         </div>
       </div>
+
+      <SafetyAnalyticsPanel />
       {/* Overview & Checklist */}
-      <div className="row g-4 mb-4">
-        <div className="col-md-6">
-          <div className="bg-white p-4 rounded shadow-sm h-100">
-            <h5 className="mb-4 fw-semibold">Incident Overview</h5>
-            <div className="mb-3">
-              <div className="d-flex justify-content-between mb-2">
-                <span className="text-muted">Severity Level:</span>
-                <Badge bg="danger" className="rounded-pill">
-                  Critical
-                </Badge>
-              </div>
-              <div className="d-flex justify-content-between mb-2">
-                <span className="text-muted">Status:</span>
-                <Badge bg="warning" text="dark" className="rounded-pill">
-                  In Progress
-                </Badge>
-              </div>
-              <div className="mt-3">
-                <span className="text-muted">Description:</span>
-                <p className="mt-1">
-                  Unexpected behavior detected in GPT-4 Large model responses,
-                  potentially affecting user safety protocols.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-6">
-          <div className="bg-white p-4 rounded shadow-sm h-100">
-            <h5 className="mb-4 fw-semibold">Safety Protocol Checklist</h5>
-            <Form>
-              {safetyProtocols.map((protocol) => (
-                <Form.Check
-                  key={protocol.id}
-                  type="checkbox"
-                  id={`protocol-${protocol.id}`}
-                  label={protocol.text}
-                  checked={protocol.completed}
-                  className="mb-2"
-                  disabled
-                />
-              ))}
-            </Form>
-          </div>
-        </div>
-      </div>
-
-      {/* Timeline & Required Actions */}
-      <div className="row g-4 mb-4">
-        <div className="col-md-6">
-          <div className="bg-white p-4 rounded shadow-sm h-100">
-            <h5 className="mb-4 fw-semibold">Response Timeline</h5>
-            <div className="timeline">
-              {timelineEvents.map((event) => (
-                <div key={event.id} className="timeline-item mb-3">
-                  <div className="d-flex">
-                    <div className="timeline-marker me-3">
-                      <div className="marker"></div>
-                    </div>
-                    <div className="timeline-content">
-                      <h6 className="mb-1">{event.title}</h6>
-                      <small className="text-muted">{event.time}</small>
-                      <p className="mb-0 mt-1">{event.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-6">
-          <div className="bg-white p-4 rounded shadow-sm h-100">
-            <h5 className="mb-4 fw-semibold">Required Actions</h5>
-            {[
-              {
-                title: "Complete system diagnostic",
-                priority: "danger",
-                label: "High Priority",
-              },
-              {
-                title: "Update safety parameters",
-                priority: "warning",
-                label: "Medium Priority",
-              },
-              {
-                title: "Document incident findings",
-                priority: "info",
-                label: "Low Priority",
-              },
-            ].map((action, idx) => (
-              <div
-                key={idx}
-                className="action-item mb-3 d-flex justify-content-between align-items-center"
-              >
-                <h6 className="mb-0">{action.title}</h6>
-                <Badge bg={action.priority} className="me-2">
-                  {action.label}
-                </Badge>
-              </div>
-            ))}
-          </div>
-
-          {/* Compliance Section */}
-          <div className="bg-white p-4 rounded shadow-sm mt-4">
-            <h5 className="mb-4 fw-semibold">Compliance Status</h5>
-            {[
-              { label: "Safety Protocols", value: 50 },
-              { label: "Documentation", value: 75 },
-              { label: "Team Response", value: 90 },
-            ].map((item, idx) => (
-              <div className="mb-3" key={idx}>
-                <div className="d-flex justify-content-between mb-2">
-                  <span>{item.label}</span>
-                  <span>{item.value}%</span>
-                </div>
-                <div className="progress" style={{ height: "8px" }}>
-                  <div
-                    className="progress-bar"
-                    role="progressbar"
-                    style={{ width: `${item.value}%` }}
-                    aria-valuenow={item.value}
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 }

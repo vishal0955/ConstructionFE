@@ -179,11 +179,11 @@ function Documents() {
 
   return (
     <>
-      <div className="min-h-screen bg-light">
+      <div className=" bg-light">
         <header className="">
           <div className="container py-2">
             <div className="d-flex justify-content-between align-items-center">
-              <h1 className="h4 text-dark">Document Register</h1>
+              <h1 className="h4 ">Document Register</h1>
             </div>
           </div>
         </header>
@@ -191,7 +191,7 @@ function Documents() {
         <main className="container py-4">
           <div className="row">
             <div className="col-md-3">
-              <div className="bg-white rounded-lg shadow-sm p-4">
+              <div className="rounded-lg shadow-sm p-4">
                 <h2 className="h5">Folders</h2>
                 <ul className="list-group">
                   {folders.map((folder) => (

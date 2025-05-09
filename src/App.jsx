@@ -100,6 +100,11 @@ import DailySiteEntryForm from "./components/AdminComponents/SiteEntry/DailySite
 import ViewAllLiveInductions from "./components/AdminComponents/Inductions/ViewAllLiveInductions";
 import PPERegisterUI from "./components/AdminComponents/SafetyEquipment/PPERegisterUI";
 import HazardTemplateForm from "./components/AdminComponents/SWMS/Templateform";
+import IncidentReportDetail from "./components/AdminComponents/IncidentReports/IncidentReportDetail";
+import { ThemeProvider } from "./context/ThemeContext";
+import PPERegisterSubcontractor from "./components/AdminComponents/SafetyEquipment/SucontractorView";
+
+
 
 
 function App() {
@@ -113,9 +118,12 @@ function App() {
     location.pathname === "/" || location.pathname === "/signup";
 
   return (
+<ThemeProvider>
     <div className="Main-App">
       <ToastContainer position="top-right" autoClose={2000} />
+     
       {!hideLayout && <Navbar toggleSidebar={toggleSidebar} />}
+     
       <div className={`Main-App-container ${hideLayout ? "no-sidebar" : ""}`}>
         {!hideLayout && (
           <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
@@ -141,7 +149,7 @@ function App() {
             <Route path="/AddnewInduction" element={<AddnewInduction />} />
             <Route path="/swms" element={<SWMS />} />
             <Route path="/audit-equipment" element={<AuditEquipment />} />
-            <Route path="/safety-equipment" element={<SafetyEquipmentList />} />
+            {/* <Route path="/safety-equipment" element={<SafetyEquipmentList />} /> */}
             <Route path="/submit-report" element={<SubmitReport />} />
             <Route
               path="/ComplianceDashboard"
@@ -158,10 +166,12 @@ function App() {
             <Route path="/equipment" element={<Equipment />} />
             <Route path="/n" element={<NEW />} />
             <Route path="/IncidentReports" element={<IncidentReports />} />
-            <Route
-              path="/AddIncidentReports"
-              element={<AddIncidentReports />}
-            />
+            <Route path="/AddIncidentReports" element={<AddIncidentReports />}  />
+            <Route path="/incidentreportdetail/:id" element={<IncidentReportDetail />} />
+
+            {/* <Route path="/demo" element={<QASubmissionForm />} /> */}
+
+
             <Route path="/siteEntry" element={<SiteEntry />} />
             <Route
               path="/dailySiteEntryForm"
@@ -253,7 +263,9 @@ function App() {
               element={<AuditEquipmentView />}
             />
             <Route path="/auditreport" element={<AuditReports />} />
-            <Route path="/safety-equipment" element={<SafetyEquipment />} />
+            {/* <Route path="/safety-equipment" element={<SafetyEquipment />} /> */}
+
+            <Route path="/safety-equipment" element={<PPERegisterUI />} />
             <Route path="/submit-report" element={<SubmitReport />} />
             <Route path="/AddnewSms" element={<AddnewSms />} />
             <Route path="/template" element={<Template />} />
@@ -415,17 +427,22 @@ function App() {
               element={<SuperadminSetting />}
             />
 
-            <Route path="/pperegister" element={<PPERegisterUI />} />
+
+            {/* <Route path="/user-management" element={<UserManagement />} /> */}
+            <Route path="/pperegister" element={<PPERegisterSubcontractor />} />
           </Routes>
         </div>
       </div>
     </div>
+    </ThemeProvider>
   );
 }
 function AppWrapper() {
   return (
     <Router>
-      <App />
+  
+        <App />
+ 
     </Router>
   );
 }

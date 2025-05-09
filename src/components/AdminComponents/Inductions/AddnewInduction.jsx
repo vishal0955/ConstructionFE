@@ -117,7 +117,7 @@ function AddnewInduction() {
         <form
           onSubmit={handleSubmit}
           style={{
-            backgroundColor: "white",
+            
             padding: "20px",
             borderRadius: "8px",
           }}

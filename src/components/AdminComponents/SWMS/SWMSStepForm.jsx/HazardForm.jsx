@@ -51,7 +51,7 @@ export default function HazardForm() {
 
         <div className="">
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium  mb-1">
               Hazard Description
             </label>
             
@@ -60,14 +60,15 @@ export default function HazardForm() {
               value={formData.hazardDescription}
               placeholder=' Describe the potential hazard in detail...'
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                 className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               rows="3"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium  mb-1">
                 Severity Level
               </label>
               <div className="flex flex-wrap gap-2">
@@ -89,7 +90,7 @@ export default function HazardForm() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium  mb-1">
                 Likelihood
               </label>
               <div className="flex flex-wrap gap-2">
@@ -112,7 +113,7 @@ export default function HazardForm() {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium  mb-1">
               Additional Notes
             </label>
           
@@ -121,13 +122,14 @@ export default function HazardForm() {
               value={formData.additionalNotes}
               onChange={handleChange}
               placeholder=' List all control measures to mitigate this hazard...'
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                 className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
               rows="3"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium  mb-1">
               Responsible Person
             </label>
             
@@ -137,7 +139,8 @@ export default function HazardForm() {
               value={formData.responsiblePerson}
               onChange={handleChange}
               placeholder=' Enter the name of person responsible'
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500
+             bg-white text-black dark:bg-gray-800 dark:text-white dark:placeholder-gray-400"
             />
           </div>
 

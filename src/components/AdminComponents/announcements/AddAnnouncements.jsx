@@ -75,7 +75,7 @@ function AddAnnouncements() {
 
   return (
     <div className="container ">
-      <div className="border rounded shadow-sm p-4 m-4" style={{backgroundColor:"white"}}>
+      <div className="border rounded shadow-sm p-4 m-4" >
         <div className="d-flex justify-content-between align-items-center mb-4">
         <h4 className="fw-bold mb-0"> {id ? "Edit Announcement" : "Create New Announcement"} </h4>
           <Link to="/announcements">

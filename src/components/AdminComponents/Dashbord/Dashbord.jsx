@@ -272,13 +272,13 @@ function Dashboard() {
   };
 
   return (
-    <div className="container-fluid p-4 bg-gray-100">
-      <h3 className="text-gray-800 font-bold mb-4">Dashboard</h3>
+    <div className="container-fluid p-4 ">
+      <h3 className=" font-bold mb-4">Dashboard</h3>
       <div className="row g-3 mb-4">
         {stats.map((stat, index) => (
           <div className="col-md-3" key={index}>
             <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${stat.color} rounded-3 bg-white h-100 transition-all hover:shadow-xl`}
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${stat.color} rounded-3  h-100 transition-all hover:shadow-xl`}
             >
               <div className="d-flex align-items-start gap-3">
                 <div
@@ -562,7 +562,7 @@ function Dashboard() {
         </Modal>
       </div>
 
-      <div className="stats-card p-3 mb-4 shadow-sm rounded-3 bg-white">
+      <div className="stats-card p-3 mb-4 shadow-sm rounded-3 ">
         <h6 className="mb-3">Recent Alerts</h6>
         <div className="d-flex flex-column gap-3">
           {alerts.map((alert, index) => (
@@ -594,7 +594,7 @@ function Dashboard() {
 
       <div className="row">
         <div className="col-lg-8 mb-4">
-          <div className="chart-container p-4 shadow-sm rounded-3 bg-white">
+          <div className="chart-container p-4 shadow-sm rounded-3 ">
             <h6 className="mb-4">Safety Performance</h6>
             <div style={{ height: "250px" }}>
               <Line data={safetyData} options={chartOptions} />
@@ -602,7 +602,7 @@ function Dashboard() {
           </div>
         </div>
         <div className="col-lg-4">
-          <div className="chart-container p-4 shadow-sm rounded-3 bg-white">
+          <div className="chart-container p-4 shadow-sm rounded-3 ">
             <h6 className="mb-4">Defect Status</h6>
             <div style={{ height: "250px" }}>
               <Doughnut data={defectData} options={doughnutOptions} />

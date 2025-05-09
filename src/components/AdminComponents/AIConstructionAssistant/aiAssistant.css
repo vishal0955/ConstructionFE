@@ -15,3 +15,14 @@
   width: 32px;
   height: 32px;
 }
+
+[data-theme="dark"] .chat-box {
+  background-color: #292824;
+  color: #000;
+  border: #fff solid 1px;
+}
+
+[data-theme="dark"] .user-msg {
+  background-color: #924f4f;
+  color: #fff;
+}
