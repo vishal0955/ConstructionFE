@@ -446,12 +446,16 @@ import {
   MdOutlineHighQuality,
   MdAnnouncement,
 } from "react-icons/md";
+import { useTheme } from "../../context/ThemeContext";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
   const [activeMenuIndex, setActiveMenuIndex] = useState(null);
   const [activeSubmenuPath, setActiveSubmenuPath] = useState(null);
   const [roledata, setRoleData] = useState("admin");
+
+    const { theme, toggleTheme } = useTheme();
 
   const menuItems = [
     {
@@ -470,7 +474,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         { title: "Site Entry", path: "/siteEntryTable" },
         { title: "Site Review", path: "/siteReview" },
         
-        { title: "Safety Equipment", path: "/safety-equipment" },
+        { title: "PPE Compliance", path: "/safety-equipment" },
       ],
     },
     {
@@ -593,7 +597,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const Role = localStorage.getItem("userRole");
+   const Role = localStorage.getItem("userRole"); 
     if (Role) {
       setRoleData(Role);
     }
@@ -680,7 +684,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     <div className={`sidebar ${isOpen ? "expanded" : "collapsed"}`}>
       <div className="sidebar-header">
         <div className="logo">
-        <img src="https://i.ibb.co/NnWcJ8D7/image.png" alt="logo" />
+      { theme === "light" ? (<img className="w-[90%] h-[36px] " src="https://i.ibb.co/k2qyNfJ6/image-removebg-preview-3.png" alt="image-removebg-preview-3" border="0"></img>) : (
+        <img  className="bg-transparent w-[90%] h-[37px] " src="https://i.ibb.co/NnWcJ8D7/image.png" alt="logo"  /> )}
+
+        {/* light logo 
+        https://i.ibb.co/VW61TvDb/image.png */}
         </div>
       </div>
       <ul className="menu">

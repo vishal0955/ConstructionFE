@@ -216,8 +216,12 @@
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
 
 const Login = () => {
+
+
+  const { theme } = useTheme();
   const navigate = useNavigate();
   // State for email, password, and selected role
   const [email, setEmail] = useState("");
@@ -258,10 +262,13 @@ const roleCredentials = {
   
 
   return (
-    <div className="auth-container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div className="auth-container d-flex justify-content-center align-items-center min-vh-100 ">
       <main className="w-100" style={{ maxWidth: "450px" }}>
-        <div className="login-container bg-white p-4 rounded shadow-sm">
-          <h4 className="text-center mb-4">Welcome Back</h4>
+        <div className="login-container  p-4 rounded shadow-sm">
+          <h4 className="text-center mb-2">Welcome Back</h4>
+          { theme === "light" ? (<img className="mx-auto w-[100%] h-[50px]" src="https://i.ibb.co/k2qyNfJ6/image-removebg-preview-3.png" alt="image-removebg-preview-3" border="0"></img>) : (
+        <img  className="mx-auto bg-transparent w-[100%] h-[50px] mb-2" src="https://i.ibb.co/NnWcJ8D7/image.png" alt="logo"  /> )}
+
           <button
             className="social-signup btn w-100 mb-3 d-flex align-items-center justify-content-center"
             style={{
@@ -314,7 +321,7 @@ const roleCredentials = {
                 Forgot password?
               </a>
             </div>
-            <button type="submit" className="btn w-100 text-white"
+            <button type="submit" className="w-100 text-white"
               style={{
                 backgroundColor: "#0e4966",
                 padding: "10px",
@@ -359,7 +366,7 @@ const roleCredentials = {
 
   {/* Worker */}
   <div className="col-6">
-    <button type="button" className={`btn w-100 text-white ${   selectedRole === "worker" ? "border border-2 border-dark" : ""
+    <button type="button" className={`btn-login w-100 text-white ${   selectedRole === "worker" ? "border border-2 border-dark" : ""
       }`}
       style={{ backgroundColor: "#0e4966", fontWeight: 500 }}
       onClick={() => handleRoleSelect("worker")}

@@ -331,14 +331,22 @@ const sortTable = (key) => {
   setFilteredInductions(sortedInductions);
 };
 
+const handleEditChange = (index, updatedText) => {
+  const updated = [...questions];
+  updated[index].text = updatedText;
+  setQuestions(updated);
+};
+
+
   return (
     <Container fluid className="py-4">
       <div className="d-flex align-items-center justify-content-between mb-4">
         <h3 className="fw-bold">Live Induction Tracker</h3>
+        <div className="d-flex align-items-center gap-2">
         <Link to="/ViewAllLiveInductions">
                 <Button
                   variant="primary"
-                  className="w-100 border-0 shadow py-2 mt-2"
+                  className="w-100 border-0 shadow py-2"
                 >
                   <i className="fas fa-users me-2 text-white"></i>
                   View All Live Inductions
@@ -359,6 +367,7 @@ const sortTable = (key) => {
             <span className="text-white">Add Induction</span>
           </Button>
         </Link>
+        </div>
       </div>
 
       {/* User Details Cards */}
@@ -599,7 +608,7 @@ const sortTable = (key) => {
         <Card.Body>
           <div className="table-responsive">
             <table className="table table-hover mb-0">
-              <thead className="bg-light">
+              <thead className="">
                 <tr>
                   <th>Question</th>
                   <th>Required</th>
@@ -611,18 +620,20 @@ const sortTable = (key) => {
               <tbody>
                 {questions.map((question, index) => (
                   <tr key={index}>
+                   
                     <td>
-                      {editingIndex === index ? (
-                        <Form.Control
-                          type="text"
-                          value={question.text}
-                          onChange={(e) => saveQuestion(index, e.target.value)}
-                          onBlur={() => setEditingIndex(null)} // Save on blur
-                        />
-                      ) : (
-                        question.text
-                      )}
-                    </td>
+  {editingIndex === index ? (
+    <Form.Control
+      type="text"
+      value={questions[index].text}
+      onChange={(e) => handleEditChange(index, e.target.value)}
+      autoFocus
+    />
+  ) : (
+    question.text
+  )}
+</td>
+
                     <td>
                       <Form.Check
                         type="switch"
@@ -640,14 +651,16 @@ const sortTable = (key) => {
                     <td>{question.inputType}</td>
                     <td>
                       <div className="d-flex gap-2">
+                     
+
                         {editingIndex === index ? (
-                          <Button
-                            variant="link"
-                            className="text-success p-0"
-                            onClick={() => setEditingIndex(null)}
-                          >
-                            <i className="fas fa-check"></i>
-                          </Button>
+                           <Button
+  variant="link"
+  className="text-success p-0"
+  onClick={() => setEditingIndex(null)}
+>
+  <i className="fas fa-check"></i>
+</Button>
                         ) : (
                           <Button
                             variant="link"

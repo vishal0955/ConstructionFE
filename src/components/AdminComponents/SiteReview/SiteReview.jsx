@@ -69,7 +69,7 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
 
   
 
-
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
 
 
 
@@ -150,7 +150,6 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
     return count;
   };
 
-// const HandleDelete = (id) => {
 //     Swal.fire({
 //       title: 'Are you sure?',
 //       text: "You won't be able to revert this!",
@@ -278,6 +277,101 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
 
       <div className="container">
         <h3 className="mb-4 font-bold text-3xl">Site Review</h3>
+
+
+ <div className="row gy-4 mb-4">
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                50
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                 Total Site Reviews
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+                35
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                 Compliant
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
+                >
+                3
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                 Non Compliant
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+                12
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                Pending
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
 
         <div className="d-flex justify-content-end">
           <Link to="/addSiteReview">
@@ -457,11 +551,19 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
       {/* AI Review Categories */}
       <h5 className="d-flex align-items-center mb-3">
         <i className="fas fa-robot me-2"></i>
-        AI Review Categories
+        Smart Review Suggestions
       </h5>
 
+      <div className="row gy-4 mb-4">
+
+        </div>
+        
+
+
+
+{/* 
       <div className="row gy-4">
-        {/* Category Cards */}
+       
         {[
           { title: "Safety Checklist", icon: "shield-alt", key: "safety" },
           { title: "Cleanliness", icon: "broom", key: "cleanliness" },
@@ -496,7 +598,7 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div className="flex bg-white border-b mt-4">
         <button 
@@ -1030,7 +1132,7 @@ function ChecklistItem({ question, category, id, data, onAnswerChange, onComment
         <div className="mb-3 p-3 border border-dashed border-gray-300 rounded-lg bg-gray-50 flex items-center justify-center">
           <div className="text-center">
             <Camera size={24} className="mx-auto mb-2 text-gray-400" />
-            <div className="text-sm text-gray-500">Tap to take photo or upload</div>
+            <input className="text-sm text-gray-500">Tap to take photo or upload</input>
           </div>
         </div>
       )}

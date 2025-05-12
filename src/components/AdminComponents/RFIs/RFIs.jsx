@@ -212,7 +212,7 @@ function RFIs() {
             )}
           </Modal.Body>
         </Modal>
-        <div className="table-responsive mt-5 mb-4 bg-white p-3 rounded-2">
+        <div className="table-responsive mt-5 mb-4 p-3 rounded-2">
           <table className="table table-hover align-middle">
             <thead>
               <tr>
@@ -267,10 +267,10 @@ function RFIs() {
                     </td>
                     <td>
                       <div>
-                        <Button variant="light" size="sm" className="me-2">
+                        {/* <Button variant="light" size="sm" className="me-2">
                           {" "}
                           <i className="fas fa-edit text-primary"></i>{" "}
-                        </Button>
+                        </Button> */}
                         <Button
                           variant="light"
                           size="sm"
@@ -308,6 +308,63 @@ function RFIs() {
             </Button>
           </div>
         </div>
+
+        <div className=" justify-content-between align-items-center mt-4">
+          <h4 className="fw-semibold">RFI Statistics</h4>
+          {/* <table className="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th className="ps-4">Project</th>
+              <th>RFI Assistant </th>
+
+                
+              </tr>
+            </thead>
+           <tbody>
+            <tr>
+              <td className="fw-semibold ps-4 py-3">Project A</td>
+              <td className="py-3">
+                <span
+                  className={`badge ${
+                    "bg-success"
+                  }`}
+                >
+                  {"RFI Assistant"}
+                </span>
+                </td>
+            </tr>
+           </tbody>
+          </table> */}
+
+<table className="table table-hover align-middle">
+  <thead>
+    <tr>
+      <th className="ps-4">Project</th>
+      <th>RFI Assistant</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="fw-semibold ps-4 py-3">Project A</td>
+      <td className="py-3">
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            id="rfiToggleProjectA"
+            defaultChecked
+          />
+          <label className="form-check-label" htmlFor="rfiToggleProjectA">
+            
+          </label>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+
 
         {/* Charts Section */}
            {/* Charts Section */}

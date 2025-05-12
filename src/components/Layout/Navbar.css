@@ -134,6 +134,10 @@
     background-color: #f8fafc;
   }
 
+  [data-theme="dark"] .profile-trigger:hover {
+    background-color: #1f2b3d;
+  }
+
   .profile-info {
     text-align: right;
   }
@@ -195,6 +199,10 @@
 
   .profile-menu .dropdown-item:hover {
     background-color: #f8fafc;
+  }
+
+  [data-theme='dark'] .profile-menu .dropdown-item:hover {
+    background-color: #24272c;
   }
 
   .profile-menu .dropdown-item i {

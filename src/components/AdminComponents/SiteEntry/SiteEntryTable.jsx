@@ -84,11 +84,7 @@ function SiteEntryTable() {
               <i className="fa-solid fa-plus me-2"></i>Site Entry
             </button>
           </Link>
-          <Link to="/dailySiteEntryForm">
-            <button className="btn btn-primary me-2">
-              <i className="fa-solid fa-plus me-2"></i>Daily Site Entry
-            </button>
-          </Link>
+         
         </div>
       </div>
 

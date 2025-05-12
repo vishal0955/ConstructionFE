@@ -26,9 +26,9 @@ export default function SWMSFormStep4({ onNext, onBack }) {
         </div>
         <div className="flex items-center mt-1">
 
-<button className="bg-blue-600 text-white px-4 py-2 rounded-md mr-2">download PDF</button>
+<button className="btn btn-primary px-4 py-2 rounded-md mr-2">download PDF</button>
 
-<button className="bg-blue-600 text-white px-4 py-2 rounded-md">
+<button className="btn btn-primary px-4 py-2 rounded-md">
 share via Email </button>
  
  </div>
@@ -208,7 +208,7 @@ share via Email </button>
         <button className="flex-1 py-3 border border-gray-300 rounded mr-2 font-medium" onClick={onBack}>
           Back
         </button>
-        <button className="flex-1 bg-blue-600 text-white py-3 rounded font-medium">
+        <button className="flex-1 btn btn-primary py-3 rounded font-medium">
           Submit SWMS
         </button>
       </div>

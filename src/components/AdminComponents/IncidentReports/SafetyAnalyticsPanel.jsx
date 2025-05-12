@@ -6,6 +6,9 @@ import {
 import { AlertTriangle, TrendingUp, CheckCircle, Clock, FileText, Calendar } from 'lucide-react';
 
 export default function SafetyAnalyticsPanel() {
+
+
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
   // Mock data - In a real app, this would come from your API
   const [analyticsData, setAnalyticsData] = useState({
     totalReports: 143,
@@ -72,7 +75,7 @@ export default function SafetyAnalyticsPanel() {
       </h2>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
           <div className="flex justify-between items-start">
             <div>
@@ -88,34 +91,124 @@ export default function SafetyAnalyticsPanel() {
             <div>
               <p className="text-sm ">Most Common</p>
               <p className="text-2xl font-bold text-gray-500">{mostCommonIncident.name}</p>
-              <p className="text-xs text-gray-500">{mostCommonIncident.value} incidents</p>
+              <p className="text-xs text-gray-500">  incidents</p>
             </div>
             <AlertTriangle size={20} className="text-orange-500" />
           </div>
         </div>
         
-        <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-          <div className="flex justify-between items-start">
-            <div>
-              <p className="text-sm ">Case Resolution</p>
-              <p className="text-2xl font-bold text-gray-500">{percentClosed}% Closed</p>
-              <p className="text-xs text-gray-500">{analyticsData.closedCases} of {analyticsData.totalReports}</p>
-            </div>
-            <CheckCircle size={20} className="text-green-500" />
-          </div>
-        </div>
+         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+        //   <div className="flex justify-between items-start">
+        //     <div>
+        //       <p className="text-sm ">Case Resolution</p>
+        //       <p className="text-2xl font-bold text-gray-500">{percentClosed}% Closed</p>
+        //       <p className="text-xs text-gray-500">{analyticsData.closedCases} of {analyticsData.totalReports}</p>
+        //     </div>
+        //     <CheckCircle size={20} className="text-green-500" />
+        //   </div>
+        // </div>*
         
         <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
           <div className="flex justify-between items-start">
             <div>
-              <p className="text-sm ">Avg. Resolution Time</p>
-              <p className="text-2xl font-bold text-gray-500">{analyticsData.averageResolutionDays} days</p>
+              <p className="text-sm "> Resolution Time</p>
+              <p className="text-2xl font-bold textAvg.-gray-500">{analyticsData.averageResolutionDays} days</p>
             </div>
             <Clock size={20} className="text-purple-500" />
           </div>
         </div>
-      </div>
+      </div> */}
 
+<div className="row g-3 mb-4">
+      <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                 {analyticsData.totalReports}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Total Incidents
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports} */}
+                    {/* {stat.subtitle} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >{mostCommonIncident.value}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Most Common Incident
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports} */}{mostCommonIncident.name}
+                    {/* {stat.subtitle} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+                  {percentClosed}%
+                 {/* {analyticsData.totalReports} */}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Avg. Resolution Time
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                  {analyticsData.closedCases} of {analyticsData.totalReports}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
+                >
+                  {analyticsData.averageResolutionDays}
+                
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                   Resolution Time
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         {/* Incidents by Category */}

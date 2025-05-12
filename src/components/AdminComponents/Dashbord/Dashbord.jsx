@@ -259,6 +259,8 @@ function Dashboard() {
     },
   };
 
+  const role = localStorage.getItem("userRole"); 
+
   const handleAddTask = () => {
     console.log("Adding new task");
   };
@@ -273,7 +275,16 @@ function Dashboard() {
 
   return (
     <div className="container-fluid p-4 ">
+      <div className="d-flex justify-content-between align-items-center mb-4">
       <h3 className=" font-bold mb-4">Dashboard</h3>
+      {role !== "admin" && ( 
+      <Link to="/dailySiteEntryForm">
+            <button className="btn btn-primary me-2">
+              <i className="fa-solid fa-plus me-2"></i>Daily Site Entry
+            </button>
+          </Link>)
+      }
+ </div>
       <div className="row g-3 mb-4">
         {stats.map((stat, index) => (
           <div className="col-md-3" key={index}>
@@ -312,12 +323,12 @@ function Dashboard() {
               <Nav.Link eventKey="siteDetails">Site Details</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="liveAttendance"> LiveAttendance</Nav.Link>
+              <Nav.Link eventKey="liveAttendance"> Live Attendance</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="dailyEntryAnalytics">
                 {" "}
-                DailyEntryAnalytics
+                Daily Entry Analytics
               </Nav.Link>
             </Nav.Item>
           </Nav>

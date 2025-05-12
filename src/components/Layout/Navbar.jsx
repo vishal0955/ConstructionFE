@@ -150,7 +150,9 @@ const Navbar = ({ toggleSidebar }) => {
        <div className="d-flex align-items-center">
           
        <button onClick={toggleTheme} className="mr-2">
-          <i className={`fas fa-${theme === "light" ? "sun" : "moon"}`}></i>
+          <i className={`fa fa-${theme === "light" ? "moon" : "sun"}`}></i>
+
+          {/* <i class="fa-regular fa-sun-bright"></i> */}
         
           </button> 
             <div className="profile-trigger" data-bs-toggle="dropdown" aria-expanded="false" onClick={handleropdown}>

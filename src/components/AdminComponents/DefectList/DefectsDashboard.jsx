@@ -35,6 +35,8 @@ const trendData = [
   { week: "Week 4", defects: 15 },
 ];
 
+const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
+
 const COLORS = ["#8884d8", "#82ca9d", "#ffc658"];
 
 const DefectsDashboard = () => {
@@ -49,7 +51,7 @@ const DefectsDashboard = () => {
         <StatsCard title="Overdue Defects" value="9" icon="⚠️" changeText="vs last month: 5 ↑" color="bg-red-50" />
       </div> */}
 
-<div className="d-flex flex-wrap gap-3">
+{/* <div className="d-flex flex-wrap gap-3">
       <StatCard
         colorClass="bg-light"
         title="Total Defects"
@@ -85,7 +87,129 @@ const DefectsDashboard = () => {
         changeText="vs last month: 5 ↑"
         icon="⚠️"
       />
-    </div>
+    </div> */}
+
+
+    
+    <div className="d-flex gap-4">
+      <div className="col-md-2" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                120
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Total Defects
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: 102 ↑
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-2" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+               55
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Open Defects
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: 55% ↓
+                  
+               
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="col-md-2" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+            18
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Resolved This Week
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last week: 14 ↑
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-2" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+           3.8 days
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Avg. Time to Close
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: 4.1 ↓
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-2" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+           9
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Overdue Defects
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: 5 ↑
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
       {/* Charts */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Pie Chart by Trade */}

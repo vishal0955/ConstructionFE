@@ -939,6 +939,8 @@ const ITPs = () => {
     return items;
   };
 
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
+
   return (
     <div className="p-4">
       <div className="d-flex justify-content-between">
@@ -956,8 +958,8 @@ const ITPs = () => {
           </button>
         </Link>
       </div>
-      <div className="row g-4">
-        {/* Total ITPs */}
+      {/* <div className="row g-4">
+
         <div className="col-md-4">
           <div className="card border-0 h-100 bg-primary bg-opacity-10">
             <div className="card-body p-4 ">
@@ -988,7 +990,7 @@ const ITPs = () => {
           </div>
         </div>
 
-        {/* Approval Rate */}
+   
         <div className="col-md-4">
           <div className="card border-0 h-100 bg-success bg-opacity-10">
             <div className="card-body p-4">
@@ -1019,7 +1021,7 @@ const ITPs = () => {
           </div>
         </div>
 
-        {/* Pending ITPs */}
+      
         <div className="col-md-4">
           <div className="card border-0 h-100 bg-warning bg-opacity-10">
             <div className="card-body p-4">
@@ -1049,7 +1051,107 @@ const ITPs = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
+        <div className="row g-4">
+      <div className="col-md-4" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                 {analytics.totalITPs.current}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Total ITPs
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: {analytics.pendingITPs.lastMonth}
+                <span className="ms-2">
+                  <i
+                    className={`fas fa-arrow-${
+                      analytics.pendingITPs.percentageChange >= 0
+                        ? "up text-success"
+                        : "down text-danger"
+                    }`}
+                  ></i>
+                </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+                {analytics.approvalRate.current}%
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Approval Rate
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: {analytics.approvalRate.lastMonth}%
+                <span className="ms-2">
+                  <i
+                    className={`fas fa-arrow-${
+                      analytics.approvalRate.percentageChange >= 0
+                        ? "up text-success"
+                        : "down text-danger"
+                    }`}
+                  ></i>
+                </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="col-md-4" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+               {analytics.pendingITPs.current}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Pending ITPs
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: {analytics.pendingITPs.lastMonth}
+                <span className="ms-2">
+                  <i
+                    className={`fas fa-arrow-${
+                      analytics.pendingITPs.percentageChange >= 0
+                        ? "up text-success"
+                        : "down text-danger"
+                    }`}
+                  ></i>
+                </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
 
       <div className="mt-4 shadow-sm p-3 bg-white rounded-3">
         <h4>Folders</h4>

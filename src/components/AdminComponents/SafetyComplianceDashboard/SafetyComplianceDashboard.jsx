@@ -274,7 +274,7 @@ function SafetyComplianceDashboard() {
       <div className="stats-card p-3 mb-4 shadow rounded-3 ">
         <h6 className="mb-3">Quick Actions</h6>
         <div className="d-flex flex-column gap-3">
-          <Link to="/AddnewSms">
+          <Link to="/SWMSStepper">
             <button className="btn btn-primary d-flex align-items-center gap-2 shadow-sm p-3 w-100 rounded-3">
               <BsPlusCircle className="text-white" />
               <span>Add New SWMS</span>

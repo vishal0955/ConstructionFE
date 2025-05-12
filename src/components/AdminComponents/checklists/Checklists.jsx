@@ -22,6 +22,8 @@ function Checklists() {
   const itemsPerPage = 5;
 
   const dispatch = useDispatch();
+
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
   const { checklists, checklistDetails, loading, error } = useSelector(
     (state) => state.checklists
   );
@@ -142,6 +144,101 @@ function Checklists() {
                 <i className="fa-solid fa-plus me-2"></i>Create New Checklist
               </button>
             </Link>
+          </div>
+
+          
+        <div className="row g-4 mb-4">
+      <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                40
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Total CheckList
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+                25
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Approved
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+             5
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Pending 
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
+                >
+                10
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                 Rejected
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
 
           {/* Filters */}

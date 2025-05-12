@@ -11,6 +11,8 @@
   --button-text: #fff;
 }
 
+
+
 [data-theme='dark'] {
   --bg-color: #0D0D0D;
   --text-color: #CCCCCC;
@@ -25,6 +27,9 @@
 
 /* Main backgrounds and text */
 body {
+  
+    font-family: 'Roboto', sans-serif !important; /* Replace with your preferred font */
+  
   background-color: var(--bg-color) !important;
   color: var(--text-color);
 }
@@ -38,7 +43,7 @@ body {
 [data-theme='dark'] .stat-card,
 [data-theme='dark'] .analytics-card,
 [data-theme='dark'] .category-card,
-[data-theme='dark'] .login-container,
+
 [data-theme='dark'] .signup-container {
   background-color: var(--card-bg) !important;
   color: var(--text-color) !important;
@@ -53,7 +58,14 @@ body {
   border-color: var(--border-color) !important;
 }
 
+.btn-login :hover {
+  background: var(--button-bg) !important;
+  color: var(--button-text) !important;
+  border: 1.5px solid var(--border-color) !important;
+}
+
 /* Buttons */
+
 /* .btn,
 .btn-primary {
   background: var(--button-bg) !important;
@@ -62,11 +74,20 @@ body {
   transition: background 0.2s, color 0.2s;
 } */
 
+[data-theme='dark'] .login-container  {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+  /* border: 1.5px solid ; */
+  box-shadow: 0 2px 8px var(--border-color) !important;
+}
+
+
 .btn:hover,
 .btn-primary:hover {
   background: var(--accent-color) !important;
   color: #181818 !important;
-  /* border-color: var(--accent-color) !important; */
+  border-color: var(--accent-color) !important;
 }
 
 /* Outlined buttons for dark mode */
@@ -143,13 +164,52 @@ body {
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.05);
 }
 
-
-
 [data-theme="dark"] .chat-box {
   background-color: #292824;
   color: #000;
   border: #fff solid 1px;
 }
+
+/* Dark mode table styles */
+[data-theme='dark'] table {
+  background-color: #181818 !important;
+  color: #CCCCCC !important;
+  border-color: #D4AF37 !important;
+}
+
+[data-theme='dark'] thead {
+  background-color: #232323 !important;
+  color: #D4AF37 !important;
+}
+
+[data-theme='dark'] tbody tr {
+  background-color: #181818 !important;
+  color: #CCCCCC !important;
+}
+
+[data-theme='dark'] tbody tr:nth-child(even) {
+  background-color: #232323 !important;
+}
+
+[data-theme='dark'] tbody tr:hover {
+  background-color: #222 !important;
+}
+
+[data-theme='dark'] th,
+[data-theme='dark'] td {
+  background-color: #181818 !important;
+  border-color: #ac9b64 !important;
+  color: #c5bdbd !important;
+}
+
+[data-theme='dark'] .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #181818 !important;
+}
+
+/* [data-theme='dark'] .table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #232323 !important;
+} */
+
 /* main-app-content-start */
 .Main-App {
   display: flex;
@@ -228,6 +288,7 @@ body {
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
+
 }
 
 .form-control:focus {
@@ -1005,7 +1066,6 @@ a {
   background-color: #f1f1f1;
 }
 
-
 [data-theme='dark'] thead {
   background-color: #1f1f1f;
   color: var(--text-color);
@@ -1026,7 +1086,6 @@ tbody tr:hover {
 [data-theme='dark'] tbody tr:hover {
   background-color: #2a2a2a;
 }
-
 
 [data-theme='dark'] input::placeholder,
 [data-theme='dark'] textarea::placeholder,

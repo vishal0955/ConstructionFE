@@ -344,7 +344,10 @@ function App() {
             <Route path="/AddnewSms" element={<AddnewSms />} />
             <Route path="/n" element={<NEW />} />
             <Route path="/IncidentReports" element={<IncidentReports />} />
-            <Route path="/ViewAllLiveInductions" element={<ViewAllLiveInductions />} />
+            <Route
+              path="/ViewAllLiveInductions"
+              element={<ViewAllLiveInductions />}
+            />
             <Route
               path="/AddIncidentReports"
               element={<AddIncidentReports />}

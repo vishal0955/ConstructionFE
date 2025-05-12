@@ -252,7 +252,7 @@ export default function SWMSFormStep2({ onNext, onBack }) {
             {/* Add New Hazard Button */}
             <button
               onClick={addNewHazard}
-              className="flex items-center justify-center w-full p-3 border border-blue-500 rounded-md text-blue-500"
+              className="flex items-center justify-center w-full p-3 border border-blue-500 rounded-md text-primary"
             >
               <PlusCircle size={20} className="mr-2" />
               Add New Hazard
@@ -265,13 +265,13 @@ export default function SWMSFormStep2({ onNext, onBack }) {
       <div className="flex p-4 border-t mt-auto gap-2">
         <button
           onClick={onBack}
-          className="w-full bg-blue-600 text-white py-3 rounded-md font-medium"
+          className="w-full btn btn-primary py-3 rounded-md font-medium"
         >
           Back
         </button>
         <button
           onClick={onNext}
-          className="w-full bg-blue-600 text-white py-3 rounded-md font-medium"
+          className="w-full btn btn-primary py-3 rounded-md font-medium"
         >
           Next
         </button>

@@ -286,12 +286,12 @@ export default function SWMSFormStep3({onNext, onBack}) {
       <div className="p-4 border-t d-flex justify-between items-center bg-white">
       <button
           onClick={onBack}
-          className=" bg-blue-600 text-white py-3 rounded-md font-medium p-3"
+          className="btn btn-primary py-3 rounded-md font-medium p-3"
         >
           Back
         </button>
         <button
-          className=" bg-blue-600 text-white p-3 rounded font-medium"
+          className=" btn btn-primary p-3 rounded font-medium"
           onClick={onNext}
         >
           Review Summary

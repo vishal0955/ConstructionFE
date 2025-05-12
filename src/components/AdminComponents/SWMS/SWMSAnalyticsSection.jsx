@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
 
-const COLORS = ['#00C49F', '#FF8042', '#0088FE'];
+const COLORS = ['#00C49F', '#FF8042', '#0088FE','#caba2d'];
+
+const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
 
 const StatCard = ({ label, value }) => (
   <div className="bg-white rounded-2xl shadow p-4 md:w-1/5 text-center">
@@ -10,6 +12,46 @@ const StatCard = ({ label, value }) => (
     <h2 className="text-2xl font-bold text-blue-800">{value}</h2>
   </div>
 );
+
+
+const stats = [
+  {
+    title: 'Total SWMS',
+    number: 42,
+    subtitle: 'Total number of SWMS created',
+    color: 'blue',
+  },
+  {
+    title: 'Average Hazards/SWMS',
+    number: 3.7,
+    subtitle: 'Average number of hazards per SWMS',
+    color: 'green',
+  },
+  {
+    title: 'Pending SWMS',
+    number: 12,
+    subtitle: 'SWMS pending review',
+    color: 'yellow',
+  },  
+  {
+    title: 'Approved SWMS',
+    number: 15,
+    subtitle: 'SWMS approved and active',
+    color: 'purple',
+  },
+  {
+    title: 'Total Hazards',
+    number: 150,
+    subtitle: 'Total hazards identified in all SWMS',
+    color: 'red',
+  },
+  {
+    title: 'High-Risk Hazards',
+    number: 25,
+    subtitle: 'High-risk hazards identified in SWMS',
+    color: 'orange',
+  },
+]
 
 const SWMSAnalyticsSection = () => {
   const [analytics, setAnalytics] = useState(null);
@@ -69,12 +111,105 @@ const SWMSAnalyticsSection = () => {
     <section className="  rounded-xl mt-6">
       <h2 className="text-xl font-semibold mb-4 ">SWMS Analytics Overview</h2>
 
+
+<div className="row g-3 mb-4">
+      <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                 {analytics.totalSwms}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Total SWMS
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {stat.subtitle} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+                 {analytics.averageHazardsPerSwms.toFixed(1)}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  average Hazards Per Swms
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {stat.subtitle} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
+                >
+                 {analytics.statusBreakdown.Approved}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Approved
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {stat.subtitle} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+                 {analytics.statusBreakdown.Pending}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                  Pending 
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {stat.subtitle} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+</div>
+
       {/* Stat Cards */}
       <div className="flex gap-4 mb-8 mx-auto">
-        <StatCard label="Total SWMS" value={analytics.totalSwms} />
+        {/* <StatCard label="Total SWMS" value={analytics.totalSwms} />
         <StatCard label="Avg Hazards/SWMS" value={analytics.averageHazardsPerSwms.toFixed(1)} />
         <StatCard label="Pending SWMS" value={analytics.statusBreakdown.Pending || 0} />
-        <StatCard label="Approved SWMS" value={analytics.statusBreakdown.Approved || 0} />
+        <StatCard label="Approved SWMS" value={analytics.statusBreakdown.Approved || 0} /> */}
       </div>
 
       {/* Charts */}

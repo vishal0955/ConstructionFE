@@ -21,6 +21,7 @@ import SafetyAnalyticsPanel from "./SafetyAnalyticsPanel";
 function IncidentReports() {
   const { reports } = useSelector((state) => state.reports);
   // console.log(reports)
+ 
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedType, setSelectedType] = useState("All");
@@ -30,6 +31,8 @@ function IncidentReports() {
   useEffect(() => {
     dispatch(getIncidentReports());
   }, [dispatch]);
+
+
 
   const getSeverityBadge = (severity) => {
     switch (severity) {
@@ -135,6 +138,7 @@ function IncidentReports() {
         </div>
 
 {/*  this  buttton will generate insights from all the incidents report */}
+<div className="d-flex  gap-2">
         <Button variant="primary" className="shadow-sm p-2  rounded">
         Generate Insights Report
         </Button>
@@ -144,6 +148,7 @@ function IncidentReports() {
             + New Incident Report
           </Button>
         </Link>
+        </div>
       </div>
 
       {/* Top Action Buttons */}

@@ -221,7 +221,7 @@ export default function SWMSForm({ onNext, onBack }) {
       <div className="p-4 border-t">
         <button
           onClick={onNext}
-          className="w-full bg-blue-600 text-white p-3 rounded font-medium"
+          className="w-full btn btn-primary"
         >
           Next
         </button>
