@@ -251,7 +251,8 @@ function Documents() {
                   {loading ? (
                     <div>Loading...</div>
                   ) : (
-                    <table className="table table-striped">
+                    <table className="table table-striped" 
+                    style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                       <thead>
                         <tr>
                           <th>Document Name</th>

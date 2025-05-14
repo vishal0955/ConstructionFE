@@ -178,7 +178,7 @@ function IncidentReports() {
 
       {/* Incident Table */}
       <div className="bg-white rounded-3 shadow-sm mb-3 p-2">
-        <div className="table-responsive">
+        <div className="table-responsive" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <Table hover className="shadow-sm bg-white mb-0 rounded mt-2">
             <thead className="table-light p-2">
               <tr>

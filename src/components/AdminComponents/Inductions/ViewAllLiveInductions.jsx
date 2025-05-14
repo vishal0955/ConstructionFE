@@ -28,7 +28,7 @@ function ViewAllLiveInductions() {
     <Container className="py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
       <h3 className="fw-bold mb-4">All Live Inductions</h3>
-      <Button variant="primary" onClick={() => navigate(-1)}>
+      <Button className="btn-secondary" onClick={() => navigate(-1)}>
         <i className="bi bi-arrow-left"></i>
              Back to Overview
       </Button>
@@ -74,7 +74,7 @@ function ViewAllLiveInductions() {
       </div>
 
       {/* Table */}
-      <Table striped bordered hover>
+      <Table striped bordered hover style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
         <thead>
           <tr>
             <th>Name</th>

@@ -108,7 +108,7 @@ function AddToolboxTalks() {
             <h4 className="mb-4 fw-semibold">Create New Toolbox Talk</h4>
             <Link to="/toolbox">
               <button
-                className="btn"
+                className="btn btn-secondary"
                 style={{ backgroundColor: "#0d6efd", color: "white" }}
               >
                 <i className="fa-solid fa-arrow-left me-2"></i>Back
@@ -248,7 +248,7 @@ function AddToolboxTalks() {
           </Form.Group> */}
 
           <div className="d-flex justify-content-end">
-            <Button variant="light" className="me-2 px-4" type="button">
+            <Button variant="secondary" className="me-2 px-4" type="button">
               Cancel
             </Button>
             <Button variant="primary" className="px-4" type="submit">

@@ -18,7 +18,7 @@ const SubmitReport = () => {
     </div>
     <div>
       <Link to="/audit-equipment">
-      <butoon className="btn" style={{backgroundColor:"#0d6efd",color:"white"}}><i class="fa-solid fa-arrow-left me-2"></i>Back</butoon>
+      <butoon className="btn btn-secondary" style={{backgroundColor:"#0d6efd",color:"white"}}><i class="fa-solid fa-arrow-left me-2"></i>Back</butoon>
       </Link>
     </div>
   </div>
@@ -97,7 +97,7 @@ const SubmitReport = () => {
 </div>
 
 <div className="table-responsive ">
-  <table className="table table-striped table-bordered table-hover align-middle mb-0">
+  <table className="table table-striped table-bordered table-hover align-middle mb-0"  style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
     <thead className="table-light">
       <tr>
         <th className="ps-4">Report ID</th>

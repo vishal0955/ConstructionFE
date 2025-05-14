@@ -165,7 +165,8 @@ const AuditEquipmentView = () => {
                   <div className="mb-4">
                     <h4 style={{ fontWeight: 600 }}>Equipment Assessment</h4>
                     <div className='table-responsive'>
-                      <table className="table mt-4">
+                      <table className="table mt-4"
+                       style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                         <thead>
                           <tr>
                             <th>Equipment</th>

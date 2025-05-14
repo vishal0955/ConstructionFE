@@ -49,7 +49,7 @@ const IncidentReportDetail = () => {
         <div className="row g-4 mb-4">
                     <button
               onClick={() => navigate(-1)}
-              className="btn "
+              className="btn btn-secondary"
               style={{ backgroundColor: "#0d6efd", }}
             >
               <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview

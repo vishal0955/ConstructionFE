@@ -211,7 +211,7 @@ export default function PPERegisterSubcontractor() {
                             
                             <div className="mt-4">
                               <h4 className="text-sm font-medium text-gray-700 mb-2">Required PPE:</h4>
-                              <table className="min-w-full divide-y divide-gray-200">
+                              <table className="min-w-full divide-y divide-gray-200" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                                 <thead className="bg-gray-50">
                                   <tr>
                                     <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PPE Item</th>
@@ -290,7 +290,7 @@ export default function PPERegisterSubcontractor() {
             
             <div className="mb-6">
               <h3 className="font-medium mb-3">Recent Records</h3>
-              <table className="min-w-full divide-y divide-gray-200">
+              <table className="min-w-full divide-y divide-gray-200" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>

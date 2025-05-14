@@ -122,6 +122,8 @@ function PlantMachinery() {
     // Save updated service details here
   };
 
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
+
   const equipmentData = [
     {
       id: "E001",
@@ -185,7 +187,7 @@ function PlantMachinery() {
         </select> */}
       </div>
       <div className="table-responsive">
-        <table className="table table-hover align-middle mb-0">
+        <table className="table table-hover align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <thead className="bg-light">
             <tr>
               <th className="ps-4">Equipment ID</th>
@@ -438,7 +440,7 @@ function PlantMachinery() {
 
             {/* Tools Table */}
             <div className="table-responsive shadow-sm bg-white rounded">
-              <table className="table table-hover table-bordered table-striped align-middle mb-0">
+              <table className="table table-hover table-bordered table-striped align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                 <thead className=" p-2">
                   <tr>
                     <th className="ps-4">Tool ID</th>
@@ -521,61 +523,11 @@ function PlantMachinery() {
   return (
     <div className="container-fluid px-4 py-4">
       <h3 className="mb-4">Plant & Machinery</h3>
-      {/* Statistics Overview */}
-      <div className="row g-3 mb-4">
-        <div className="col-md-4">
-          <div className="stats-card  p-3 rounded shadow-sm">
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <h6 className="text-muted mb-1">Total Equipment</h6>
-                <h3 className="mb-0">{equipments.length}</h3>
-              </div>
-              <div className="bg-light rounded p-2">
-                <i className="fas fa-tools fa-lg text-dark"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* <div className="col-md-3">
-          <div className="bg-white p-3 rounded shadow-sm">
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <h6 className="text-muted mb-1">Active Equipment</h6>
-                <h3 className="mb-0">{equipments.filter((equipment) => equipment.status === "Active").length}</h3>
-              </div>
-              <div className="bg-light rounded p-2">
-                <i className="fas fa-check-circle fa-lg text-success"></i>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        <div className="col-md-4">
-          <div className="stats-card p-3 rounded shadow-sm">
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <h6 className="text-muted mb-1">Total Tools</h6>
-                <h3 className="mb-0">{tools.length}</h3>
-              </div>
-              <div className="bg-light rounded p-2">
-                <i className="fas fa-wrench fa-lg text-warning"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="stats-card p-3 rounded shadow-sm">
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <h6 className="text-muted mb-1">Checked Out</h6>
-                <h3 className="mb-0">30</h3>
-              </div>
-              <div className="bg-light rounded p-2">
-                <i className="fas fa-sign-out-alt fa-lg text-primary"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+   
+    
+
+
+
 
       {/* Tab Navigation */}
       <div className="nav nav-tabs mb-4">
@@ -616,6 +568,97 @@ function PlantMachinery() {
 
       {/* Dynamic Content */}
       {renderContent()}
+
+            <div className="row g-4 mb-4">
+
+      <div className="col-md-4" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+          {equipments.length}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                  Total Equipment
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      <div className="col-md-4" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                 {tools.length}
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                  Total Tools
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    {/* vs last month: {analytics.pendingITPs.lastMonth} */}
+                {/* <span className="ms-2">
+                  <i
+                    className={`fas fa-arrow-${
+                      analytics.pendingITPs.percentageChange >= 0
+                        ? "up text-success"
+                        : "down text-danger"
+                    }`}
+                  ></i>
+                </span> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-4" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+             30
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                  Checked Out
+                  </div>
+                  {/* <div className="stats-subtitle small text-gray-600">
+                 
+                    vs last month: {analytics.approvalRate.lastMonth}%
+                <span className="ms-2">
+                  <i
+                    className={`fas fa-arrow-${
+                      analytics.approvalRate.percentageChange >= 0
+                        ? "up text-success"
+                        : "down text-danger"
+                    }`}
+                  ></i>
+                </span>
+                  </div> */}
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        
+          </div>
     </div>
   );
 }

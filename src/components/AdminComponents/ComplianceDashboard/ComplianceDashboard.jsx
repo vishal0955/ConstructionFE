@@ -112,7 +112,7 @@ const ComplianceDashboard = () => {
                   {stat.number}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1 ">
                     {stat.title}
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -144,7 +144,7 @@ const ComplianceDashboard = () => {
         </div>
 
         <div className="table-responsive shadow-sm bg-white rounded">
-          <Table className="mb-0 table-bordered table-striped align-middle">
+          <Table className="mb-0 table-bordered table-striped align-middle" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
             <thead className="table-light p-2">
               <tr>
                 <th className="ps-4">Worker Name</th>

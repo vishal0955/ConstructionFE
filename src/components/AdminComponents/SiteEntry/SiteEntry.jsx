@@ -109,6 +109,7 @@ function SiteEntry() {
     }
   };
 
+  
   const isSafetyEquipmentSelected = Object.values(
     formData.safetyEquipment
   ).every((item) => item);
@@ -116,6 +117,9 @@ function SiteEntry() {
   return (
     <>
       <div className="container mt-4">
+
+  
+
         <div className="d-flex justify-content-between">
           <div>
           <h4>{id ? "Edit Site Entry" : "Add Site Entry"}</h4>
@@ -123,7 +127,7 @@ function SiteEntry() {
           </div>
           <div>
             <Link to="/siteEntryTable">
-              <button  className="btn"
+              <button  className="btn btn-secondary"
                 style={{ backgroundColor: "#0d6efd", color: "white" }}>
                 <i class="fa-solid fa-arrow-left me-2"></i>Back
               </button>

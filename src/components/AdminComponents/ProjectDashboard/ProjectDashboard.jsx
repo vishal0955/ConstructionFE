@@ -54,6 +54,9 @@ const ProjectDashboard = () => {
     // dispatch(fetchUsers());
   }, [dispatch]);
 
+
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
+
   const handleCloseModal = () => {
     setShowModal(false);
     setSelectedProject(null);
@@ -82,6 +85,9 @@ const ProjectDashboard = () => {
 
   return (
     <Container className="mt-4 ">
+
+
+
       <div className="bg-white p-3 rounded-3">
         <Row className="mb-3">
           <Col>
@@ -139,7 +145,7 @@ const ProjectDashboard = () => {
         </Row>
 
         {/* Project Table */}
-        <Table bordered hover responsive>
+        <Table bordered hover responsive style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <thead className="table-light">
             <tr>
               <th className="ps-4">Project Name</th>
@@ -285,6 +291,59 @@ const ProjectDashboard = () => {
 
         {/* Pagination */}
       </div>
+
+      <div className="row gx-3 gy-3 text-center mt-2">
+          {[
+            {
+              title: "Total Projects",
+              value: 12,
+              // note: "Next talk in 2 hours",
+            },
+            {
+              title: "Completed Projects",
+              value: "95%",
+              // note: "Last 30 days average",
+              className: "text-success",
+            },
+            { title: "Pending Projects", value: 8, 
+              // note: "Requires attention"
+             },
+            {
+              title: "Inprogress Projects",
+              value: "10",
+              // note: "All requirements met",
+              className: "text-success",
+            },
+          ].map((card, i) => (
+            <>
+            
+
+
+ <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[i]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[i]}`}
+                >
+                  {card.value}
+         
+                </div>
+                <div>
+                  <div className="stats-title h4 mb-1 text-gray-800">
+                  {card.title}
+                  </div>
+                 
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </>
+          ))}
+        </div>
     </Container>
   );
 };

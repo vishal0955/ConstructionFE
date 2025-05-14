@@ -79,7 +79,7 @@ function AddAnnouncements() {
         <div className="d-flex justify-content-between align-items-center mb-4">
         <h4 className="fw-bold mb-0"> {id ? "Edit Announcement" : "Create New Announcement"} </h4>
           <Link to="/announcements">
-            <button className="btn set_btn text-white">
+            <button className="btn btn-secondary">
               <i className="fa-solid fa-arrow-left me-2"></i>Back
             </button>
           </Link>
@@ -139,7 +139,7 @@ function AddAnnouncements() {
 
           {/* Action Buttons */}
           <div className="d-flex justify-content-end gap-3">
-            <button type="button" className="btn btn-outline-secondary">Cancel</button>
+            <button type="button" className="btn btn-secondary">Cancel</button>
             <button type="submit" className="btn set_btn text-white">Publish Announcement</button>
           </div>
         </form>

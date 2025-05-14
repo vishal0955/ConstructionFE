@@ -120,7 +120,7 @@ export default function ConstructionHazardForm() {
         <Link to="/swms">
                   <button
                     
-                    className="btn "
+                    className="btn btn-secondary"
                     style={{ backgroundColor: "#0d6efd", color: "white" }}
                   >
                     <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview
@@ -130,12 +130,12 @@ export default function ConstructionHazardForm() {
 
       {/* Work Activity Section */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">Work Activity</label>
+        <label className="block text-sm font-medium mb-2">Work Activity</label>
         <textarea
           value={formData.workActivity}
           onChange={handleWorkActivityChange}
           placeholder="Describe the work activity in detail..."
-          className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-400"
           rows="3"
         />
       </div>
@@ -153,7 +153,7 @@ export default function ConstructionHazardForm() {
         </div>
 
         {formData.hazards.map((hazard, index) => (
-          <div key={index} className="mb-4 p-4 border border-gray-200 rounded bg-gray-50">
+          <div key={index} className="mb-4 p-4 border border-gray-200 rounded ">
             <div className="flex justify-between">
               <h3 className="font-medium text-gray-700 mb-2">Hazard #{index + 1}</h3>
               {formData.hazards.length > 1 && (
@@ -172,7 +172,7 @@ export default function ConstructionHazardForm() {
                 value={hazard.description}
                 onChange={(e) => handleHazardChange(index, 'description', e.target.value)}
                 placeholder="Describe the potential hazard in detail..."
-                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-400"
                 rows="2"
               />
             </div>
@@ -222,7 +222,7 @@ export default function ConstructionHazardForm() {
                 value={hazard.controlmeasures}
                 onChange={(e) => handleHazardChange(index, 'controlmeasures', e.target.value)}
                 placeholder="Control measures to prevent the potential hazard in detail..."
-                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-400"
                 rows="2"
               />
             </div>
@@ -235,7 +235,7 @@ export default function ConstructionHazardForm() {
                 value={hazard.responsiblePerson}
                 onChange={(e) => handleHazardChange(index, 'responsiblePerson', e.target.value)}
                 placeholder=""
-                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 rounded "
                 rows="2"
               />
               </div>

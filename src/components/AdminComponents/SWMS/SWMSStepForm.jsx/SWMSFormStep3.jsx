@@ -20,11 +20,11 @@ export default function SWMSFormStep3({onNext, onBack}) {
   return (
     <div className="flex flex-col min-h-screen ">
       {/* Header */}
-      <header className="bg-white p-4 border-b flex items-center">
+      {/* <header className="bg-white p-4 border-b flex items-center">
         <ArrowLeft className="mr-2" size={20} />
         <h1 className="text-lg font-medium">Risk Assessment</h1>
         <div className="ml-auto text-sm text-gray-500">Step 3 of 4</div>
-      </header>
+      </header> */}
 
       <div className="flex-1 overflow-auto p-4 space-y-6 max-w-4xl mx-auto">
         {/* Activity Section */}
@@ -283,15 +283,15 @@ export default function SWMSFormStep3({onNext, onBack}) {
       </div>
 
       {/* Footer with Review Summary button */}
-      <div className="p-4 border-t d-flex justify-between items-center bg-white">
+      <div className="p-4 border-t d-flex justify-between items-center bg-white gap-2">
       <button
           onClick={onBack}
-          className="btn btn-primary py-3 rounded-md font-medium p-3"
+          className="btn btn-secondary py-3 rounded-md font-medium p- w-1/2 "
         >
           Back
         </button>
         <button
-          className=" btn btn-primary p-3 rounded font-medium"
+          className=" btn btn-primary p-3 rounded font-medium w-1/2"
           onClick={onNext}
         >
           Review Summary

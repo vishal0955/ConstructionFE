@@ -173,7 +173,7 @@ function AddDefectList() {
           <h4 className="fw-semibold m-0">Log New Defect</h4>
           <button
             onClick={() => navigate(-1)}
-            className="btn"
+            className="btn btn-secondary"
             style={{ backgroundColor: "#0d6efd", color: "white" }}
           >
             <i className="fa-solid fa-arrow-left me-2"></i> Back to Overview
@@ -420,17 +420,7 @@ Closed – Jab QA/Reviewer approve kar deta */}
   </div>
 )}
 
-        {/* <div className="mt-3">
-          <label className="form-label">Comments & Notes</label>
-          <textarea
-            name="comments"
-            className="form-control"
-            placeholder="Add any additional comments or notes"
-            rows={3}
-            onChange={handleChange}
-            value={formData.comments}
-          />
-        </div> */}
+       
 
         <div className="mt-4 d-flex gap-2">
           <button className="btn btn-outline-secondary">Save as Draft</button>

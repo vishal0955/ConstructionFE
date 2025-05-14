@@ -92,7 +92,7 @@ function AddToolRegistry() {
           <h4 className="fw-semibold">Add New Tool</h4>
           <button
             onClick={() => navigate("/PlantMachinery")}
-            className="btn"
+            className="btn btn-secondary"
             style={{ backgroundColor: "#0d6efd", color: "white" }}
           >
             <i className="fa-solid fa-arrow-left me-2"></i> Back to Overview
@@ -214,7 +214,7 @@ function AddToolRegistry() {
 
           <div className="mt-4 d-flex gap-2 justify-content-end">
             <Link to="/plantMachinery">
-              <button type="button" className="btn btn-light">
+              <button type="button" className="btn btn-secondary">
                 Cancel
               </button>
             </Link>

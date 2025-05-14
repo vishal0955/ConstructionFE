@@ -35,7 +35,7 @@ import planPackageReducer from './slices/Superadmin/planPackageSlice.js';
 import PlanRequestReducer from './slices/Superadmin/planRequestSlice.js';
 
 import authReducer from './slices/authSlice.js';
-
+import swmshazardReducer from './slices/swmshazardSlice.js';
 
 
 export const store = configureStore({
@@ -68,7 +68,8 @@ export const store = configureStore({
         users: userReducer,
         drawings: drawingsReducer,
         Plan:planPackageReducer,
-        planRequest:PlanRequestReducer
+        planRequest:PlanRequestReducer,
+        swmshazard: swmshazardReducer,
       }
 
 });

@@ -69,6 +69,7 @@ function SiteEntryTable() {
     currentPage * itemsPerPage
   );
 
+  const color = ["primary", "secondary", "success", "danger"];
   useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery, selectedSite]);
@@ -87,6 +88,59 @@ function SiteEntryTable() {
          
         </div>
       </div>
+
+      {/* <div className="row gx-3 gy-3 text-center mb-4">
+          {[
+            {
+              title: "Total Projects",
+              value: 12,
+              // note: "Next talk in 2 hours",
+            },
+            {
+              title: "Completed Projects",
+              value: "95%",
+              // note: "Last 30 days average",
+              className: "text-success",
+            },
+            { title: "Pending Projects", value: 8, 
+              // note: "Requires attention"
+             },
+            {
+              title: "Inprogress Projects",
+              value: "10",
+              // note: "All requirements met",
+              className: "text-success",
+            },
+          ].map((card, i) => (
+            <>
+            
+
+
+ <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[i]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[i]}`}
+                >
+                  {card.value}
+         
+                </div>
+                <div>
+                  <div className="stats-title h4 mb-1 text-gray-800">
+                  {card.title}
+                  </div>
+                 
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </>
+          ))}
+        </div> */}
 
       <div className="d-flex flex-wrap gap-3 mb-3">
         <InputGroup style={{ maxWidth: "300px" }}>
@@ -113,7 +167,7 @@ function SiteEntryTable() {
 
       {/* Table */}
       <div className="table-responsive shadow-sm bg-white rounded p-2">
-        <Table className="mb-0 table-bordered table-striped align-middle">
+        <Table className="mb-0 table-bordered table-striped align-middle" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <thead className="table-light p-2">
             <tr>
               <th className="ps-4">Full Name</th>

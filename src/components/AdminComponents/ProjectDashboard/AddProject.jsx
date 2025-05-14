@@ -67,7 +67,7 @@ const AddProject = () => {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h3>Add New Project</h3>
-        <button onClick={() => navigate(-1)} className="btn btn-primary">
+        <button onClick={() => navigate(-1)} className="btn btn-secondary">
           <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview
         </button>
       </div>

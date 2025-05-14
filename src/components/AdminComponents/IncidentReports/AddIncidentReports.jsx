@@ -107,7 +107,7 @@ function AddIncidentReports() {
             </button>
             <button
               onClick={() => navigate(-1)}
-              className="btn "
+              className="btn btn-secondary "
               style={{ backgroundColor: "#0d6efd", color: "white" }}
             >
               <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview

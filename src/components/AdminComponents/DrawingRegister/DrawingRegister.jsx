@@ -425,7 +425,7 @@ function DrawingRegister() {
           </Row>
         ) : (
           <div className="table-responsive">
-            <table className="table table-hover align-middle mb-0">
+            <table className="table table-hover align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
               <thead className="table-light">
                 <tr>
                   <th className="ps-4">Document</th>

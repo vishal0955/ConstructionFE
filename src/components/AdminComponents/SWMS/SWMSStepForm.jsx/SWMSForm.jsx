@@ -25,6 +25,8 @@ export default function SWMSForm({ onNext, onBack }) {
   const handleNext = () => {
     console.log('Form data submitted:', formData);
     // Logic to move to step 2 would go here
+    localStorage.setItem('formData', JSON.stringify(formData));
+    onNext();
   };
 
   return (
@@ -220,7 +222,7 @@ export default function SWMSForm({ onNext, onBack }) {
       {/* Footer with Next button */}
       <div className="p-4 border-t">
         <button
-          onClick={onNext}
+          onClick={handleNext}
           className="w-full btn btn-primary"
         >
           Next

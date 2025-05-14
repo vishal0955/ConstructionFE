@@ -59,15 +59,15 @@ function DefectList() {
   const totalPages = Math.ceil(filteredDefects.length / itemsPerPage);
 
   return (
-    <div className="container-fluid p-4">
-      <DefectsDashboard />
+    <div className="container-fluid p-2">
+      
       <div className="bg-white p-4 rounded shadow">
         <div className="d-flex justify-content-between">
           <h4 className="fw-semibold mb-4">All Defect Lists</h4>
 
           <Link to={"/AddDefectList"} className="ms-auto">
             <button
-              className="btn  px-3"
+              className="btn btn-secondary  px-3"
               onClick={() => {
                 console.log("Redirect to create checklist page");
               }}
@@ -125,7 +125,7 @@ function DefectList() {
           className="table-responsive shadow-sm bg-white rounded"
           style={{ maxHeight: "400px", overflowY: "auto" }}
         >
-          <table className="table table-bordered table-striped align-middle mb-0">
+          <table className="table table-bordered -striped align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
             <thead className="table-light p-2">
               <tr>
                 <th className="ps-4 fw-medium fs-6">Defect Title</th>
@@ -262,6 +262,7 @@ function DefectList() {
 
         {/* Updated Table */}
       </div>
+      <DefectsDashboard />
     </div>
   );
 }

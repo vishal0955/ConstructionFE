@@ -131,7 +131,7 @@ export default function SafetyAnalyticsPanel() {
                  {analyticsData.totalReports}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1 ">
                   Total Incidents
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -152,7 +152,7 @@ export default function SafetyAnalyticsPanel() {
                 >{mostCommonIncident.value}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                   Most Common Incident
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -176,7 +176,7 @@ export default function SafetyAnalyticsPanel() {
                  {/* {analyticsData.totalReports} */}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                   Avg. Resolution Time
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -198,7 +198,7 @@ export default function SafetyAnalyticsPanel() {
                 
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                    Resolution Time
                   </div>
                   <div className="stats-subtitle small text-gray-600">

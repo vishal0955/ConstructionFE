@@ -116,7 +116,7 @@ export default function Calendar_createnewtask() {
       
             {/* Buttons */}
             <div className="d-flex justify-content-end">
-              <Button variant="light" className="me-2 px-4 rounded border">Cancel</Button>
+              <Button variant="secondary" className="me-2 px-4 rounded border">Cancel</Button>
               <Button variant="primary" className="px-4 rounded">Create Task</Button>
             </div>
           </Form>

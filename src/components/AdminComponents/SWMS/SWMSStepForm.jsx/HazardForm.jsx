@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
+import { useDispatch } from 'react-redux';
+import { CreateSWMSHazard } from '../../../../redux/slices/swmshazardSlice';
+import { toast } from 'react-toastify';
 
 
 export default function HazardForm() {
+  
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     hazardDescription: '',
     severityLevel: '',
@@ -36,9 +41,17 @@ export default function HazardForm() {
 
   const handleSubmit = (e) => {
     if (e) e.preventDefault();
+    if( formData.hazardDescription === '' || formData.severityLevel === '' || formData.likelihood === '' || formData.additionalNotes === '' || formData.responsiblePerson === '')
+      {return toast.error("Please fill all the fields!");
+      }else{
+       
+    dispatch(CreateSWMSHazard(formData)).then ((res) => 
+    toast.success(res?.message ||"Hazard added successfully!"),
+    );
+      }
     // Handle form submission logic here
-    console.log('Form submitted:', formData);
-    alert('Hazard added successfully!');
+    
+    // alert('Hazard added successfully!');
   };
 
   return (

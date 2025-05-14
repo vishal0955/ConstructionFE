@@ -41,7 +41,7 @@ const ViewUser = () => {
         <div className="card-header bg-info text-white d-flex justify-content-between align-items-center">
           <h4 className="mb-0">User Details</h4>
           <button
-            className="btn btn-dark"
+            className="btn btn-secondary"
             onClick={() => navigate("/userManagement")}
           >
             Back

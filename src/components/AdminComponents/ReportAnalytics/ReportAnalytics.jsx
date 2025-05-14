@@ -98,7 +98,8 @@ function ReportAnalytics() {
           }
         });
       }
-  
+      const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
+
       return () => {
         if (trendChartInstance.current) trendChartInstance.current.destroy();
         if (incidentChartInstance.current) incidentChartInstance.current.destroy();
@@ -139,14 +140,44 @@ function ReportAnalytics() {
       { title: "Open Incidents", value: "5", text: "↓ 3 from last month", color: "danger" },
       { title: "Quality Score", value: "92%", text: "↑ 1% from last month", color: "primary" },
       { title: "Project Progress", value: "78%", text: "On Schedule", color: "info" },
-    ].map((stat, index) => (
-      <Col md={3} key={index}>
+    ].map((stat, i) => (
+
+      <>
+      {/* <Col md={3} key={i}>
         <Card className="p-3 shadow-sm border-0 h-100">
           <h6 className="mb-1">{stat.title}</h6>
           <h4 className={`text-${stat.color}`}>{stat.value}</h4>
           <small className={`text-${stat.color === "danger" ? "muted" : stat.color}`}>{stat.text}</small>
         </Card>
-      </Col>
+      </Col> */}
+
+
+      <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${stat.color} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${stat.color}`}
+                >
+              {stat.value}
+         
+                </div>
+                <div>
+                  <div className="stats-title h4 mb-1 text-gray-800">
+                  {stat.title}
+                  </div>
+                  <div className="stats-subtitle small text-muted">
+                  {stat.text}
+                  </div>
+                 
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </>
     ))}
   </Row>
 

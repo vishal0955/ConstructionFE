@@ -160,7 +160,7 @@ function App() {
               element={<AddNewWorker></AddNewWorker>}
             ></Route>
             <Route path="/AddnewSms" element={<AddnewSms />} />
-            <Route path="/editnewSwms/:id" element={<AddnewSms />} />
+            <Route path="/editnewSwms/:id" element={<SWMSStepper />} />
 
             <Route path="/template" element={<Template />} />
             <Route path="/equipment" element={<Equipment />} />

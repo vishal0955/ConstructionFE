@@ -92,30 +92,58 @@ const DefectsDashboard = () => {
 
     
     <div className="d-flex gap-4">
-      <div className="col-md-2" >
+      <div className="w-5/12" >
             <div
               className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
             >
-              <div className="d-flex align-items-start gap-3">
+              <div className="d-flex align-items-start gap-4">
                 <div
                   className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
                 >
                 120
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1 ">
                   Total Defects
                   </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                    vs last month: 102 ↑
-                  </div>
+                
                 </div>
               </div>
+              <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  vs last month: 102 ↑
+                  </div>
             </div>
           </div>
 
-          <div className="col-md-2" >
+          <div className="w-5/12" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+               55
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 ">
+                  Open Defects
+                  </div>
+               
+                </div>
+              </div>
+              <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    vs last month: 55% ↓
+                  
+               
+                  </div>
+            </div>
+          </div>
+
+
+          <div className="w-5/12" >
             <div
               className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
             >
@@ -123,82 +151,58 @@ const DefectsDashboard = () => {
                 <div
                   className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
                 >
-               55
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                  Open Defects
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                    vs last month: 55% ↓
-                  
-               
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="col-md-2" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
-                >
             18
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1 ">
                   Resolved This Week
                   </div>
-                  <div className="stats-subtitle small text-gray-600">
+                  
+                </div>
+              </div>
+              <div className="stats-subtitle small text-gray-600">
                     {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
                     vs last week: 14 ↑
                   </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div className="col-md-2" >
+          <div className="w-5/12" >
             <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[4]} rounded-3  h-100 transition-all hover:shadow-xl`}
             >
               <div className="d-flex align-items-start gap-3">
                 <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                  className={`stats-number h2 mb-0 fw-bold text-${color[4]}`}
                 >
-           3.8 days
+           3.8 
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1 ">
                   Avg. Time to Close
                   </div>
-                  <div className="stats-subtitle small text-gray-600">
+                 
+                </div>
+              </div>
+              <div className="stats-subtitle small text-gray-600">
                     {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
                     vs last month: 4.1 ↓
                   </div>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div className="col-md-2" >
+          <div className="w-5/12" >
             <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
             >
               <div className="d-flex align-items-start gap-3">
                 <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
                 >
            9
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1 ">
                   Overdue Defects
                   </div>
                   <div className="stats-subtitle small text-gray-600">

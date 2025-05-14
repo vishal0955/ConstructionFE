@@ -58,6 +58,7 @@ const SafetyEquipmentDetails = () => {
         <h2>Safety Equipment Details</h2>
         <Button
           onClick={() => navigate(-1)}
+          variant="secondary"
           style={{ backgroundColor: "#0d6efd", color: "white" }}
         >
           <i className="fa-solid fa-arrow-left me-2"></i> Back

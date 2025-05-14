@@ -181,7 +181,7 @@ const SafetyEquipment = () => {
     <Container>
       <div className="d-flex justify-content-between align-items-center mb-4 mt-4">
         <h2>{id ? "Update Safety Equipment" : "Add Safety Equipment"}</h2>
-        <Button onClick={() => navigate(-1)} style={{ backgroundColor: "#0d6efd", color: "white" }}>
+        <Button onClick={() => navigate(-1)} className="btn btn-secondary">
           <i className="fa-solid fa-arrow-left me-2"></i> Back to Overview
         </Button>
       </div>

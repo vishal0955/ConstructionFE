@@ -138,7 +138,7 @@ function RFIs() {
                     {stat.number}
                   </div>
                   <div>
-                    <div className="stats-title h6 mb-1 text-gray-800">
+                    <div className="stats-title h6 mb-1 ">
                       {stat.title}
                     </div>
                     <div className="stats-subtitle small text-gray-600">
@@ -212,7 +212,7 @@ function RFIs() {
             )}
           </Modal.Body>
         </Modal>
-        <div className="table-responsive mt-5 mb-4 p-3 rounded-2">
+        <div className="table-responsive mt-5 mb-4 p-3 rounded-2 " style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <table className="table table-hover align-middle">
             <thead>
               <tr>
@@ -336,7 +336,7 @@ function RFIs() {
            </tbody>
           </table> */}
 
-<table className="table table-hover align-middle">
+<table className="table table-hover align-middle" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
   <thead>
     <tr>
       <th className="ps-4">Project</th>

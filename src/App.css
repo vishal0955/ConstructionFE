@@ -62,6 +62,7 @@ body {
   background: var(--button-bg) !important;
   color: var(--button-text) !important;
   border: 1.5px solid var(--border-color) !important;
+
 }
 
 /* Buttons */
@@ -74,6 +75,51 @@ body {
   transition: background 0.2s, color 0.2s;
 } */
 
+
+ /* Make .btn-secondary override .btn in dark mode */
+[data-theme='dark'] .btn.btn-secondary {
+  background: #CCCCCC !important;
+  color: #0D0D0D !important;
+  border: 2px solid var(--accent-color) !important;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .btn.btn-secondary:hover {
+  background: var(--accent-color) !important;
+  color: #0D0D0D !important;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  z-index: 20;
+}
+
+/* Support buttons using variant attribute (e.g. <button variant="secondary">) */
+button[variant="secondary"],
+button[data-variant="secondary"] {
+  background: transparent;
+  color: var(--button-text);
+  border: 1.5px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] button[variant="secondary"],
+[data-theme='dark'] button[data-variant="secondary"] {
+  background: #CCCCCC;
+  color: #0D0D0D;
+  border-color: var(--border-color);
+}
+
+/* Add hover effect to variant buttons */
+button[variant="secondary"]:hover,
+button[data-variant="secondary"]:hover {
+  background: var(--accent-color);
+  color: #0D0D0D;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+
+
 [data-theme='dark'] .login-container  {
   background-color: var(--card-bg) !important;
   color: var(--text-color) !important;
@@ -83,19 +129,32 @@ body {
 }
 
 
+.btn,
+.btn-primary {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+
+
+
 .btn:hover,
 .btn-primary:hover {
   background: var(--accent-color) !important;
-  color: #181818 !important;
+  color: var(--button-text) !important;
   border-color: var(--accent-color) !important;
+  box-shadow: 0 2px 2px hwb(54 75% 7%) !important;
+  transform: translateY(-2px) scale(1.01);
 }
+
 
 /* Outlined buttons for dark mode */
 [data-theme='dark'] .btn,
 [data-theme='dark'] .btn-primary {
-  background: transparent !important;
-  color: var(--accent-color) !important;
-  border: 1.5px solid var(--accent-color) !important;
+   background: var(--accent-color) !important;
+  color: #181818 !important;
+  border-color: var(--accent-color) !important;
+  border: 1.5px solid var(--accent-color) !important; 
 }
 
 [data-theme='dark'] .btn:hover,
@@ -119,6 +178,12 @@ body {
 [data-theme='dark'] a:hover {
   color: #fff;
 }
+
+/* [data-theme='dark'] list-group list-group-item {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+} */
 
 /* Muted text */
 .text-muted,
@@ -614,7 +679,7 @@ body {
 
 .stats-title {
   font-size: 14px;
-  color: #666;
+  color: #646464;
 }
 
 .stats-subtitle {

@@ -158,7 +158,7 @@ function AddDiaries_timesheets() {
 
             {/* Buttons */}
             <div className="d-flex justify-content-end gap-2">
-              <Button variant="light" className="border">
+              <Button variant="secondary" className="border">
                 Cancel
               </Button>
               <Button variant="dark">Save & Submit</Button>

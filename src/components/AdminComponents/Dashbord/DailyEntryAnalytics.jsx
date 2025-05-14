@@ -89,7 +89,7 @@ const sampleData = [
 ];
 
 const DailyEntryAnalytics = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+const [selectedDate, setSelectedDate] = useState(new Date("2025-05-06"));
   const [filteredData, setFilteredData] = useState(
     sampleData.filter(
       (item) =>
@@ -228,6 +228,9 @@ const DailyEntryAnalytics = () => {
         </div>
 
         {/* Row 2: Pie and Doughnut */}
+        {filteredData.length === 0 ? (
+  <p>No data available for selected date.</p>
+) : ( <>
         <div className="chart-row">
           <div className="chart-box">
             <Pie
@@ -251,7 +254,10 @@ const DailyEntryAnalytics = () => {
               }}
             />
           </div>
+
         </div>
+        </>
+        )}
       </div>
 
       {/* Inline CSS */}

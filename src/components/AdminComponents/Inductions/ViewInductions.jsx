@@ -27,7 +27,7 @@ const ViewInductions = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Induction Details</h2>
         <Link to="/inductions">
-          <button className="btn btn-link text-secondary">← Back</button>
+          <button className="btn btn-secondary ">← Back</button>
         </Link>
       </div>
 

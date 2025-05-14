@@ -123,7 +123,7 @@ function UserManagement() {
 
                 {/* Table */}
                 <div className="table-responsive">
-                  <table className="table table-bordered table-hover align-middle mb-0">
+                  <table className="table table-bordered table-hover align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                     <thead className="table-light">
                       <tr>
                         <th className="ps-4">Name</th>

@@ -204,8 +204,8 @@ share via Email </button>
       </div>
 
       {/* Footer with navigation buttons */}
-      <div className="flex border-t bg-white p-4">
-        <button className="flex-1 py-3 border border-gray-300 rounded mr-2 font-medium" onClick={onBack}>
+      <div className="flex border-t bg-white p-4 gap-2">
+        <button className="flex-1 btn btn-secondary " onClick={onBack}>
           Back
         </button>
         <button className="flex-1 btn btn-primary py-3 rounded font-medium">

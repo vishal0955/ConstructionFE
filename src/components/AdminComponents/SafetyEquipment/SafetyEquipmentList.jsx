@@ -132,7 +132,7 @@ const SafetyEquipmentList = () => {
       </Row>
 
       {/* Table */}
-      <div className="table-responsive">
+      <div className="table-responsive" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
         <Table striped bordered hover>
           <thead>
             <tr>

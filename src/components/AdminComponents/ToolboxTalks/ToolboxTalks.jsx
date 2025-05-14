@@ -173,6 +173,7 @@ function ToolboxTalks() {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
 
   return (
     <div>
@@ -203,13 +204,51 @@ function ToolboxTalks() {
               className: "text-success",
             },
           ].map((card, i) => (
-            <div className="col-md-3" key={i}>
+            <>
+            {/* <div className="col-md-3" key={i}>
               <div className="stats-card p-3 rounded shadow-sm h-100 d-flex flex-column justify-content-center">
                 <h6 className="text-muted">{card.title}</h6>
                 <h2 className={card.className}>{card.value}</h2>
                 <p className="text-muted mb-0">{card.note}</p>
               </div>
+            </div> */}
+
+
+ <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[i]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[i]}`}
+                >
+                  {card.value}
+         
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                  {card.title}
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                    {card.note}
+                <span className="ms-2">
+                  {/* <i
+                    className={`fas fa-arrow-${
+                      analytics.pendingITPs.percentageChange >= 0
+                        ? "up text-success"
+                        : "down text-danger"
+                    }`}
+                  ></i> */}
+                </span>
+                  </div>
+
+                </div>
+              </div>
             </div>
+          </div>
+
+          </>
           ))}
         </div>
 
@@ -283,7 +322,7 @@ function ToolboxTalks() {
         <div className="tab-content">
           <div className="tab-pane fade show active" id="scheduled">
             <div className="table-responsive">
-              <table className="table table-hover align-middle">
+              <table className="table table-hover align-middle" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
                 <thead>
                   <tr>
                     <th>Topic</th>

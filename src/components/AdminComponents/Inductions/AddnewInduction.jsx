@@ -107,7 +107,7 @@ function AddnewInduction() {
           <h2>Add New Induction</h2>
           <button
             onClick={() => navigate(-1)}
-            className="btn text-white"
+            className="btn btn-secondary"
             style={{ backgroundColor: "#0d6efd" }}
           >
             <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview
@@ -312,7 +312,7 @@ function AddnewInduction() {
           <div className="d-flex justify-content-end gap-2 mt-4">
             <button
               type="button"
-              className="btn btn-light"
+              className="btn btn-secondary"
               onClick={() => navigate(-1)}
             >
               Cancel

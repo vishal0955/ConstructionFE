@@ -245,7 +245,7 @@ const PlanRequest = () => {
 
 
       <div className="table-responsive">
-        <table className="table table-striped table-bordered">
+        <table className="table table-striped table-bordered" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <thead>
             <tr>
               <th>Full Name</th>

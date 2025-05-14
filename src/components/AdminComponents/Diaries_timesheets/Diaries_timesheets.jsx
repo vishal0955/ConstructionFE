@@ -412,7 +412,7 @@ export default function DiariesTimesheets() {
             className="table-responsive"
             style={{ maxHeight: "400px", overflowY: "auto" }}
           >
-            <Table striped bordered hover>
+            <Table striped bordered hover style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
               <thead className="table-light">
                 <tr>
                   <th className="ps-4">Date</th>

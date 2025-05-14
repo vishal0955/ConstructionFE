@@ -276,103 +276,8 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
       {/* Quick Actions */}
 
       <div className="container">
+        <div className="d-flex justify-content-between align-items-center">
         <h3 className="mb-4 font-bold text-3xl">Site Review</h3>
-
-
- <div className="row gy-4 mb-4">
-        <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
-                >
-                50
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                 Total Site Reviews
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
-                >
-                35
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                 Compliant
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            
-        <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
-                >
-                3
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                 Non Compliant
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            
-        <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
-                >
-                12
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                Pending
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          </div>
-
-
         <div className="d-flex justify-content-end">
           <Link to="/addSiteReview">
             <Button variant="primary" size="sm">
@@ -380,10 +285,11 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
             </Button>
           </Link>
         </div>
+        </div>
 
       
         <div className="mt-3 rounded-3">
-          <Table striped bordered hover responsive className="shadow-sm ">
+          <Table striped bordered hover responsive className="shadow-sm " style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
             <thead className="bg-light">
               <tr>
                 <th>Site Name/Location</th>
@@ -464,6 +370,100 @@ function SiteReview({ question, category, id, data, onAnswerChange, onCommentCha
           </Table>
         </div>
       </div>
+
+
+       <div className="row gy-4 mb-4">
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                50
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                 Total Site Reviews
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+                35
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                 Compliant
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
+                >
+                3
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                 Non Compliant
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
+        <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+                12
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1">
+                Pending
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </div>
 
       {/* Insights Section */}
       <div className="row gy-4 mb-4">

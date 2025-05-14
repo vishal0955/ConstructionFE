@@ -288,7 +288,7 @@ function EditToolboxTalk() {
 
         <div className="d-flex justify-content-end">
           <Button
-            variant="light"
+            variant="secondary"
             className="me-2"
             onClick={() => navigate("/toolbox")}
           >

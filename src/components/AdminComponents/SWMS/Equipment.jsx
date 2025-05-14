@@ -319,7 +319,7 @@ const Equipment = () => {
       {/* Button Container */}
       <div className="d-flex justify-content-end mb-3">
         <Link to="/swms">
-          <button className="btn btn-primary me-2"><i class="fa-solid fa-arrow-left me-2"></i>Back</button>
+          <button className="btn btn-secondary me-2"><i class="fa-solid fa-arrow-left me-2"></i>Back</button>
         </Link>
         <button className="btn btn-success" onClick={handleDownload}>Download Checklist</button>
       </div>
@@ -328,7 +328,7 @@ const Equipment = () => {
       <h4 className="fw-bold mb-3">✅ {title} Equipment</h4>
 
       {checklistItems.length > 0 ? (
-        <table className="table table-bordered">
+        <table className="table table-bordered" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
           <thead className="table-light">
             <tr>
               <th>Checklist Item</th>

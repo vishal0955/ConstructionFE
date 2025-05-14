@@ -482,7 +482,7 @@ const handleEditChange = (index, updatedText) => {
 
         <Card.Body className="p-2">
   <div className="table-responsive">
-    <table className="table table-hover mb-0">
+    <table className="table table-hover mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
       <thead className="bg-light">
         <tr>
           <th className="ps-4" onClick={() => sortTable("fullName")}>

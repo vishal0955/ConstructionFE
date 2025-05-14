@@ -113,7 +113,7 @@ function AddChecklists() {
           <h4 className="fw-semibold">Create New Checklist</h4>
           <button
             onClick={() => navigate(-1)}
-            className="btn"
+            className="btn btn-secondary"
             style={{ backgroundColor: "#0d6efd", color: "white" }}
           >
             <i className="fa-solid fa-arrow-left me-2"></i> Back to Overview

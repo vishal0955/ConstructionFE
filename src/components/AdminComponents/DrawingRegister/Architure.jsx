@@ -53,7 +53,8 @@ const Architure = () => {
 
           {/* Table */}
           <div className="table-responsive">
-            <Table bordered hover className="align-middle">
+            <Table bordered hover className="align-middle" 
+            style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
               <thead className="table-light">
                 <tr>
                   <th>Document ID</th>

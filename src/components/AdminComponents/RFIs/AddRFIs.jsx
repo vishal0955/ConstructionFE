@@ -295,7 +295,7 @@ function AddRFIs() {
         <div className="d-flex justify-content-end gap-2">
           <button
             type="button"
-            className="btn btn-light"
+            className="btn btn-secondary"
             onClick={() => window.history.back()}
           >
             Cancel

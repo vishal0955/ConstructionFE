@@ -258,7 +258,7 @@ function SafetyComplianceDashboard() {
                   {stat.number}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                     {stat.title}
                   </div>
                   <div className="stats-subtitle small ">

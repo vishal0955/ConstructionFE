@@ -39,7 +39,7 @@ export default function SWMSStepper() {
           <Link to="/swms">
           <button
             
-            className="btn "
+            className="btn btn-secondary "
             style={{ backgroundColor: "#0d6efd", color: "white" }}
           >
             <i class="fa-solid fa-arrow-left me-2"></i> Back to Overview

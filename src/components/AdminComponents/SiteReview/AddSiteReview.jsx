@@ -151,7 +151,7 @@ function AddSiteReview() {
       <div className="d-flex justify-content-between">
         <h4 className="mb-4">{reviewId ? 'Edit Site Review' : 'Create New Site Review'}</h4>
         <Link to="/siteReview">
-          <button className="btn text-white" style={{ backgroundColor: '#0d6efd' }}>
+          <button className="btnbtn-secondary text-white" style={{ backgroundColor: '#0d6efd' }}>
             <i className="fa-solid fa-arrow-left me-2"></i>Back
           </button>
         </Link>
@@ -251,7 +251,7 @@ function AddSiteReview() {
         </div>
 
         <div className="d-flex justify-content-end gap-2 mt-4">
-          <button type="button" className="btn btn-light" onClick={() => navigate(-1)}>
+          <button type="button" className="btn btn-secondary" onClick={() => navigate(-1)}>
             Cancel
           </button>
           <button type="submit" className="btn btn-primary" disabled={loading}>

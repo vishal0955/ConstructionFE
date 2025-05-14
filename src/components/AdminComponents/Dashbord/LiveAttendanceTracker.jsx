@@ -254,7 +254,8 @@ const LiveAttendanceTracker = () => {
           responsive
           hover
           size="sm"
-          style={{ tableLayout: "auto" }}
+          style={{ tableLayout: "auto",border: '1px solid #dee2e6'}} 
+         
         >
           <thead
             className="table-light sticky-top"

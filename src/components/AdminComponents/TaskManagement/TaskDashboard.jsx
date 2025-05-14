@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button, Form, InputGroup, FormControl } from "react-bootstrap";
+import { Table, Button, Form, InputGroup, FormControl, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteTask, fetchTasks } from "../../../redux/slices/taskManagement";
@@ -59,6 +59,19 @@ const AllTasks = () => {
     );
   });
 
+  // const filteredData = data.filter((project) => {
+  //   const matchesSearch = task?.name
+  //     .toLowerCase()
+  //     .includes(searchTerm.toLowerCase());
+  //   const matchesStatus = statusFilter ? project.status === statusFilter : true;
+  //   const matchesPriority = priorityFilter
+  //     ? project.priority === priorityFilter
+  //     : true;
+  //   return matchesSearch && matchesStatus && matchesPriority;
+  // });
+
+
+  const color = [ "primary", "success", "warning", "danger", "info", "dark" ];
 
   useEffect(() => {
     dispatch(fetchTasks());
@@ -66,7 +79,7 @@ const AllTasks = () => {
 
   return (
     <div>
-      <div className="d-flex justify-content-between mb-3 mt-4">
+      <div className="d-flex justify-content-between mb-3 mt-4">  
         <h3>All Tasks</h3>
         <Link to="/create-task">
           <Button variant="primary" className="mb-3">
@@ -75,17 +88,55 @@ const AllTasks = () => {
         </Link>
       </div>
 
-      <div className="mb-3">
-        <InputGroup>
-          <FormControl
-            placeholder="Search tasks..."
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-          />
-        </InputGroup>
-      </div>
+      
+      
 
-      <Table bordered hover responsive className="mb-0">
+         <Row className="mb-3">
+                  <Col md={4}>
+                    <Form.Control
+                      type="text"
+                      placeholder="Search Tasks .."
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    />
+                  </Col>
+                  <Col md={2}>
+                    <Form.Control
+                      as="select"
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    >
+                      <option value="">All Statuses</option>
+                      <option>Ongoing</option>
+                      <option>Completed</option>
+                      <option>In Progress</option>
+                      <option>Delayed</option>
+                    </Form.Control>
+                  </Col>
+                  <Col md={2}>
+                    <Form.Control
+                      as="select"
+                      // value={priorityFilter}
+                      // onChange={(e) => {
+                      //   setPriorityFilter(e.target.value);
+                      //   setCurrentPage(1);
+                      // }}
+
+                      value={filter}
+                      onChange={(e) => setFilter(e.target.value)}
+                    >
+                      <option value="">All Priorities</option>
+                      <option>High</option>
+                      <option>Medium</option>
+                      <option>Low</option>
+                    </Form.Control>
+                  </Col>
+                </Row>
+
+ 
+
+
+      <Table bordered hover responsive className="mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
         <thead className="table-light">
           <tr>
             <th className="ps-4">Task Title</th>
@@ -187,6 +238,59 @@ const AllTasks = () => {
           Next
         </Button>
       </div>
+
+      <div className="row gx-3 gy-3 text-center mt-2">
+          {[
+            {
+              title: "Total Tasks",
+              value: 12,
+              // note: "Next talk in 2 hours",
+            },
+            {
+              title: "Completed Tasks",
+              value: "95%",
+              // note: "Last 30 days average",
+              className: "text-success",
+            },
+            { title: "Pending Tasks", value: 8, 
+              // note: "Requires attention"
+             },
+            {
+              title: "Inprogress Tasks",
+              value: "10",
+              // note: "All requirements met",
+              className: "text-success",
+            },
+          ].map((card, i) => (
+            <>
+            
+
+
+ <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[i]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[i]}`}
+                >
+                  {card.value}
+         
+                </div>
+                <div>
+                  <div className="stats-title h4 mb-1 text-gray-800">
+                  {card.title}
+                  </div>
+                 
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </>
+          ))}
+        </div>
     </div>
   );
 };

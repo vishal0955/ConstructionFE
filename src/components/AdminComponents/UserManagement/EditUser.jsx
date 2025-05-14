@@ -76,7 +76,7 @@ const EditUser = () => {
           <Link to="/UserManagement">
             <button
               type="button"
-              className="btn"
+              className="btn btn-secondary"
               style={{ backgroundColor: "#0d6efd", color: "white" }}
             >
               <i className="fa-solid fa-arrow-left me-2"></i> Back

@@ -56,8 +56,8 @@ const AddNewWorker = () => {
             <h4>Add New Worker</h4>
             <Link to="/ComplianceDashboard">
               <Button
-                variant=""
-                className=""
+                variant="secondary"
+               
                 style={{ backgroundColor: "#0d6efd", color: "white" }}
               >
                 <i class="fa-solid fa-arrow-left me-2"></i>Back to Dashboard
@@ -275,7 +275,7 @@ const AddNewWorker = () => {
 
             <div className="d-flex justify-content-between">
               <Button
-                variant="outline-secondary"
+                variant="secondary"
                 className="me-2"
                 type="button"
               >

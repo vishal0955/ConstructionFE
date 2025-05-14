@@ -124,7 +124,7 @@ const SWMSAnalyticsSection = () => {
                  {analytics.totalSwms}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                   Total SWMS
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -146,7 +146,7 @@ const SWMSAnalyticsSection = () => {
                  {analytics.averageHazardsPerSwms.toFixed(1)}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                   average Hazards Per Swms
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -168,7 +168,7 @@ const SWMSAnalyticsSection = () => {
                  {analytics.statusBreakdown.Approved}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                   Approved
                   </div>
                   <div className="stats-subtitle small text-gray-600">
@@ -190,7 +190,7 @@ const SWMSAnalyticsSection = () => {
                  {analytics.statusBreakdown.Pending}
                 </div>
                 <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
+                  <div className="stats-title h6 mb-1">
                   Pending 
                   </div>
                   <div className="stats-subtitle small text-gray-600">

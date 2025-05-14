@@ -77,7 +77,7 @@ function AddUserManagement() {
             <Link to="/UserManagement">
               <button
                 type="button"
-                className="btn"
+                className="btn btn-secondary"
                 style={{ backgroundColor: "#0d6efd", color: "white" }}
               >
                 <i className="fa-solid fa-arrow-left me-2"></i> Back
@@ -303,7 +303,7 @@ function AddUserManagement() {
 
             {/* Action Buttons */}
             <div className="d-flex justify-content-end">
-              <button type="button" className="btn btn-light border me-2">
+              <button type="button" className="btn btn-secondary border me-2">
                 Cancel
               </button>
               <button type="submit" className="btn set_btn text-white">

@@ -32,7 +32,7 @@ function SWMS() {
   const dispatch = useDispatch();
 
   const { swms, loading, error } = useSelector((state) => state.swms);
-  // console.log("swms", swms);
+  console.log("swms", swms);
 
   const projects = useSelector((state) => state.projects.data);
   // console.log(projects);
@@ -45,12 +45,15 @@ function SWMS() {
     dispatch(fetchProjects());
   }, [dispatch]);
 
-  const SwmsList = Array.isArray(swms) ? swms : [];
+  const SwmsList = Array.isArray(swms.data) ? swms.data : [];
+
+  console.log("SwmsList", SwmsList);
+  console.log(SwmsList.swmsName)
 
   const handleSearchChange = (e) => setSearch(e.target.value);
 
   const filteredSwms = SwmsList.filter((swms) =>
-    swms.title.toLowerCase().includes(search.toLowerCase())
+    swms.swmsName.toLowerCase().includes(search.toLowerCase())
   );
 
   const totalPages = Math.ceil(filteredSwms.length / itemsPerPage);
@@ -226,12 +229,17 @@ function SWMS() {
 
         <Card.Body className="p-2">
           <div className="table-responsive">
-            <table className="table table-hover align-middle mb-0">
+            <table className="table table-hover  align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}
+            // style={{
+            //   border: "1px solid #dee2e6", // Adds border around the table
+            //   borderRadius: "8px", // Optional: rounds the corners of the table
+            // }}
+            >
               <thead className="bg-light">
                 <tr>
                   <th className="ps-4">SWMS Name</th>
-                  <th>Project</th>
-                  <th>Work Area </th>
+                  <th>Company Name</th>
+                  <th>Responsible Person </th>
                   <th>Date Created</th>
                   <th className="pe-4">Actions</th>
                 </tr>
@@ -249,13 +257,13 @@ function SWMS() {
                       <td className="ps-4">
                         <div className="d-flex align-items-center gap-3">
                           <div>
-                            <div className="fw-medium">{item?.title}</div>
+                            <div className="fw-medium">{item?.swmsName}</div>
                           </div>
                         </div>
                       </td>
-                      <td>{item?.project?.name || item.project}</td>
-                      <td>{item?.workArea}</td>
-                      <td>{new Date(item?.createdAt).toLocaleString()}</td>
+                      <td>{item?.companyName || item.project}</td>
+                      <td>{item?.responsiblePersonName}</td>
+                      <td>{new Date(item?.createdAt).toLocaleDateString()}</td>
                       <td className="pe-4">
                         <div className="d-flex gap-3">
                           <Link to={`/view-swms/${item?._id}`}>

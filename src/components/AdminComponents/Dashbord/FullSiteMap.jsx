@@ -169,7 +169,7 @@ const FullSiteMap = () => {
     <div className="container-fluid">
       <div className="d-flex justify-content-between align-items-center p-3 border-bottom bg-white">
         <button
-          className="btn btn-outline-secondary"
+          className="btn btn-secondary"
           onClick={() => window.history.back()}
         >
           <i className="fas fa-arrow-left me-2"></i> Back to Dashboard

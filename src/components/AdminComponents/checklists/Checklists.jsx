@@ -130,9 +130,9 @@ function Checklists() {
     <>
       <div
         className="container-fluid px-3 py-3"
-        style={{ background: "#f8f9fa" }}
+       
       >
-        <div className="bg-white p-3 p-md-4 rounded shadow-sm">
+        <div className=" p-3 p-md-4 rounded shadow-sm">
           {/* Heading + Button */}
           <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
             <h5 className="fw-bold mb-2 mb-sm-0 fs-4">All Checklists</h5>
@@ -147,99 +147,7 @@ function Checklists() {
           </div>
 
           
-        <div className="row g-4 mb-4">
-      <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
-                >
-                40
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                  Total CheckList
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                  
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
-                >
-                25
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                  Approved
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
-                >
-             5
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                  Pending 
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-3" >
-            <div
-              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
-            >
-              <div className="d-flex align-items-start gap-3">
-                <div
-                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
-                >
-                10
-                </div>
-                <div>
-                  <div className="stats-title h6 mb-1 text-gray-800">
-                 Rejected
-                  </div>
-                  <div className="stats-subtitle small text-gray-600">
-                
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
+    
 
           {/* Filters */}
           <div className="row g-2 mb-3">
@@ -291,7 +199,7 @@ function Checklists() {
 
           {/* Table */}
           <div className="table-responsive shadow-sm bg-white rounded p-2">
-            <table className="table table-bordered table-striped align-middle mb-0">
+            <table className="table table-bordered table-striped align-middle mb-0" style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
               <thead className="table-light p-2">
                 <tr>
                   <th className="ps-4 fw-medium fs-6">Checklist Name</th>
@@ -364,6 +272,9 @@ function Checklists() {
                 )}
               </tbody>
             </table>
+
+
+        
 
             {/* Modal for Displaying Checklist Details */}
             <Modal
@@ -500,6 +411,102 @@ function Checklists() {
                 Next
               </Button>
             </div>
+
+
+          </div>
+
+                  <div className="row g-4 mt-4">
+      <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[0]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[0]}`}
+                >
+                40
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 ">
+                  Total CheckList
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[1]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[1]}`}
+                >
+                25
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 ">
+                  Approved
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[2]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[2]}`}
+                >
+             5
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 ">
+                  Pending 
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                    {/* {analyticsData.totalReports}{analyticsData.averageResolutionDays} */}
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-md-3" >
+            <div
+              className={`stats-card p-4 shadow-lg border-start border-4 border-${color[3]} rounded-3  h-100 transition-all hover:shadow-xl`}
+            >
+              <div className="d-flex align-items-start gap-3">
+                <div
+                  className={`stats-number h2 mb-0 fw-bold text-${color[3]}`}
+                >
+                10
+                </div>
+                <div>
+                  <div className="stats-title h6 mb-1 text-gray-800">
+                 Rejected
+                  </div>
+                  <div className="stats-subtitle small text-gray-600">
+                
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>

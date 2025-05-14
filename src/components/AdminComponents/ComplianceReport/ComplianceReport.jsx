@@ -149,7 +149,8 @@ const ComplianceReport = () => {
         <>
           <h4 className="mt-4">Identified Compliance Issues</h4>
           <div className="table-responsive">
-            <Table striped bordered hover>
+            <Table striped bordered hover 
+            style={{ border: '1px solid #dee2e6', borderRadius: '8px' }}>
               <thead>
                 <tr>
                   <th>Issue</th>

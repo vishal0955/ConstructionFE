@@ -321,11 +321,13 @@ const roleCredentials = {
                 Forgot password?
               </a>
             </div>
-            <button type="submit" className="w-100 text-white"
+            <button type="submit" className="btn w-100 text-white"
               style={{
                 backgroundColor: "#0e4966",
                 padding: "10px",
-                borderRadius: "5px",}}> Log In
+                borderRadius: "5px",
+                
+              }}> Log In
             </button>
             <p className="text-center mt-3 mb-0">
               <span className="text-secondary">Don't have an account?</span>
@@ -366,9 +368,9 @@ const roleCredentials = {
 
   {/* Worker */}
   <div className="col-6">
-    <button type="button" className={`btn-login w-100 text-white ${   selectedRole === "worker" ? "border border-2 border-dark" : ""
+    <button type="button" className={`btn w-100 text-white ${   selectedRole === "worker" ? "border border-2 border-dark" : ""
       }`}
-      style={{ backgroundColor: "#0e4966", fontWeight: 500 }}
+      style={{ backgroundColor: "#0e4966", fontWeight: 500, }}
       onClick={() => handleRoleSelect("worker")}
     >
       Worker

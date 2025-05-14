@@ -75,7 +75,7 @@ const OpenBim = () => {
           <a
             href="#"
             data-readdy="true"
-            className="flex items-center gap-2 text-gray-700 hover:text-indigo-600 cursor-pointer"
+            className="flex  btn btn-secondary items-center gap-2 text-gray-700 hover:text-indigo-600 cursor-pointer"
           >
             <i className="fas fa-arrow-left"></i>
          <Link to="/Doc3DBeamModeling">   <span className="font-medium">Back</span></Link>
